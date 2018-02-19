@@ -20,5 +20,9 @@
   "homepage": "https://github.com/stefanoruschettacaleffi/contecanetwork#readme",
   "devDependencies": {
     "pm2": "^2.9.3"
+  },
+  "dependencies": {
+    "espress": "0.0.0",
+    "express": "^4.16.2"
   }
 }
