@@ -1,8 +1,10 @@
-const express = require('express')
-const app = express()
+const net = require('net');
 
-app.get('/', (req,res) => {
-	res.send("Her we are")
-})
+var server = net.createServer(function(socket) {
 
-app.listen(3000,  () => console.log('Server running on port 3000'))
+   var connection_in = socket.remoteAddress + ":" + socket.remotePort;
+   console.log("Connection received: " + connection_in);
+
+});
+
+server.listen(8989);
