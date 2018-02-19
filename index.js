@@ -47,6 +47,6 @@ function handleConnection(connection) {
     }
 
     //var byteBuffer = new Buffer("1040014116", 'hex');
-    connection.setEncoding("hex");
+    connection.setEncoding('hex');
     connection.write("1040014116");
 }
