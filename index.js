@@ -17,11 +17,10 @@ server.listen(PORT);
 
 function onClientConnected(socket) {
 
+    socket.setEnconding('hex');
+
     let clientName = `${socket.remoteAddress}:${socket.remotePort}`;
     console.log('New client: ' + clientName);
-
-    var byteBuffer = new Buffer("1040014116", 'hex');
-    socket.write(byteBuffer);
 
     socket.on('data', (data) => {
 
@@ -31,6 +30,8 @@ function onClientConnected(socket) {
         console.log(`${clientName} said: ${m}`);
         socket.destroy();
     });
+
+    socket.write("1040014116","hex");
 }
 
 console.log(`Server started on port: ${PORT}`);
