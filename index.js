@@ -16,8 +16,22 @@ let server = net.createServer(onClientConnected);
 server.listen(PORT);
 
 function onClientConnected(socket) {
-    console.log(`New client: ${socket.remoteAddress}:${socket.remotePort}`);
-    socket.destroy();
+
+    let clientName = `${socket.remoteAddress}:${socket.remotePort}`;
+    console.log('New client: ' + clientName);
+
+    var byteBuffer = new Buffer("1040014116", 'hex');
+    socket.write(byteBuffer);
+
+
+    socket.on('data', (data) => {
+
+        let m = data.toString().replace(/[\n\r]*$/, '');
+
+        // Logging the message on the server
+        console.log(`${clientName} said: ${m}`);
+
+    });
 }
 
 console.log(`Server started on port: ${PORT}`);
