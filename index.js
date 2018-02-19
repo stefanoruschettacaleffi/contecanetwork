@@ -17,7 +17,7 @@ server.listen(PORT);
 
 function onClientConnected(socket) {
 
-    socket.setEnconding('hex');
+    socket.setEncoding('hex');
 
     let clientName = `${socket.remoteAddress}:${socket.remotePort}`;
     console.log('New client: ' + clientName);
