@@ -12,7 +12,7 @@ server.listen(8989);
 
 const PORT = 8989;
 
-let server = net.createServer();
+var server = net.createServer();
 
 server.on('connection', handleConnection);
 
@@ -27,7 +27,7 @@ function handleConnection(connection) {
 
     console.log("new client connection from :" + remote_address);
 
-    connection.setEncoding("hex");
+    //connection.setEncoding("hex");
 
     connection.on("data", handleConnData);
     connection.on("close", handleConnClose);
@@ -48,5 +48,5 @@ function handleConnection(connection) {
     }
 
     //var byteBuffer = new Buffer("1040014116", 'hex');
-    connection.write("1040014116","hex");
+    connection.write("1040014116");
 }
