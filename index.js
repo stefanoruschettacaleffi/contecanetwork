@@ -21,8 +21,7 @@ function onClientConnected(socket) {
 
     let clientName = `${socket.remoteAddress}:${socket.remotePort}`;
     console.log('New client: ' + clientName);
-
-
+    
     socket.on('data', (data) => {
 
         let m = data.toString().replace(/[\n\r]*$/, '');
