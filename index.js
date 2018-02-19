@@ -32,10 +32,8 @@ function handleConnection(connection) {
     connection.on("close", handleConnClose);
     connection.on("error", handleConnError);
 
-    connection.write("1040014116", "hex");
-
     function handleConnData(data) {
-        console.log("Data recieved:" + data);
+        console.log("Data received:" + data);
         connection.destroy();
     }
 
@@ -46,4 +44,6 @@ function handleConnection(connection) {
     function handleConnError(){
         console.log("connection error");
     }
+
+    connection.write("1040014116", "hex");
 }
