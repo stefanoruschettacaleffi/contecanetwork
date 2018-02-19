@@ -24,9 +24,10 @@ server.listen(PORT, function(){
 function handleConnection(connection) {
 
     var remote_address = connection.remoteAddress + ":" + connection.remotePort;
+
     console.log("new client connection from :" + remote_address);
 
-    connection.setEncoding("hex");
+    //connection.setEncoding("hex");
 
     connection.on("data", handleConnData);
     connection.on("close", handleConnClose);
@@ -45,6 +46,6 @@ function handleConnection(connection) {
         console.log("connection error");
     }
 
-    var byteBuffer = new Buffer("1040014116", 'hex');
-    connection.write(byteBuffer,"hex");
+    //var byteBuffer = new Buffer("1040014116", 'hex');
+    connection.write("1040014116","hex");
 }
