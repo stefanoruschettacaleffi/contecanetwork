@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "restart": "pm2 startOrRestart ecosystem.config.js",
+    "deploy": "pm2 deploy ecosystem.config.js production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/stefanoruschettacaleffi/contecanetwork/issues"
   },
-  "homepage": "https://github.com/stefanoruschettacaleffi/contecanetwork#readme"
+  "homepage": "https://github.com/stefanoruschettacaleffi/contecanetwork#readme",
+  "devDependencies": {
+    "pm2": "^2.9.3"
+  }
 }
