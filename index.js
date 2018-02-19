@@ -26,17 +26,17 @@ function handleConnection(connection) {
     var remote_address = connection.remoteAddress + ":" + connection.remotePort;
     console.log("new client connection from :" + remote_address);
 
-    conn.setEncoding("hex");
+    connection.setEncoding("hex");
 
-    conn.on("data", handleConnData);
-    conn.on("close", handleConnClose);
-    conn.on("error", handleConnError);
+    connection.on("data", handleConnData);
+    connection.on("close", handleConnClose);
+    connection.on("error", handleConnError);
 
-    conn.write("1040014116", "hex");
+    connection.write("1040014116", "hex");
 
     function handleConnData(data) {
         console.log("Data recieved:" + data);
-        conn.destroy();
+        connection.destroy();
     }
 
     function handleConnClose(){
