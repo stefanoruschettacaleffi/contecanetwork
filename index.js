@@ -45,5 +45,5 @@ function handleConnection(connection) {
         console.log("connection error");
     }
 
-    connection.write("1040014116", "hex");
+    connection.write("1040014116");
 }
