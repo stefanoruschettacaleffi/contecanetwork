@@ -10,7 +10,7 @@ var server = net.createServer(function(socket) {
 server.listen(8989);
 */
 
-const PORT = 5000;
+const PORT = 8989;
 
 let server = net.createServer(onClientConnected);
 server.listen(PORT);
