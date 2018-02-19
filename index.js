@@ -35,7 +35,7 @@ function handleConnection(connection) {
 
     function handleConnData(data) {
         console.log("Data received: " + data);
-        console.log("Data received: " + data.toString('hex');
+        console.log("Data received: " + data.toString('hex'));
         //connection.destroy();
     }
 
