@@ -12,33 +12,38 @@ server.listen(8989);
 
 const PORT = 8989;
 
-let server = net.createServer(onClientConnected);
-server.listen(PORT);
+let server = net.createServer();
+
+server.on('connection', handleConnection);
+
+server.listen(PORT, function(){
+    console.log(`Server started on port: ${PORT}`);
+});
 
 
+function handleConnection(connection) {
 
+    var remote_address = connection.remoteAddress + ":" + connection.remotePort;
+    console.log("new client connection from :" + remote_address);
 
+    conn.setEncoding("hex");
 
+    conn.on("data", handleConnData);
+    conn.on("close", handleConnClose);
+    conn.on("error", handleConnError);
 
-function onClientConnected(socket) {
+    conn.write("1040014116", "hex");
 
-    socket.setEncoding('hex');
+    function handleConnData(data) {
+        console.log("Data recieved:" + data);
+        conn.destroy();
+    }
 
-    let clientName = `${socket.remoteAddress}:${socket.remotePort}`;
-    console.log('New client: ' + clientName);
+    function handleConnClose(){
+        console.log("Connection close.");
+    }
 
-    socket.on('data', (data) => {
-
-        let m = data.toString().replace(/[\n\r]*$/, '');
-
-        // Logging the message on the server
-        console.log(`${clientName} said: ${m}`);
-
-        socket.destroy();
-    });
-    
-    var byteBuffer = new Buffer("1040014116", 'hex');
-    socket.write(byteBuffer);
+    function handleConnError(){
+        console.log("connection error");
+    }
 }
-
-console.log(`Server started on port: ${PORT}`);
