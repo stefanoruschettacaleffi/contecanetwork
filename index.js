@@ -27,7 +27,7 @@ function handleConnection(connection) {
 
     console.log("new client connection from :" + remote_address);
 
-    //connection.setEncoding("hex");
+    connection.setEncoding("hex");
 
     connection.on("data", handleConnData);
     connection.on("close", handleConnClose);
@@ -35,7 +35,7 @@ function handleConnection(connection) {
 
     function handleConnData(data) {
         console.log("Data received:" + data);
-        connection.destroy();
+        //connection.destroy();
     }
 
     function handleConnClose(){
