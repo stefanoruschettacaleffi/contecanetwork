@@ -22,7 +22,6 @@ function onClientConnected(socket) {
     let clientName = `${socket.remoteAddress}:${socket.remotePort}`;
     console.log('New client: ' + clientName);
 
-    socket.destroy();
 
     socket.on('data', (data) => {
 
@@ -30,6 +29,8 @@ function onClientConnected(socket) {
 
         // Logging the message on the server
         console.log(`${clientName} said: ${m}`);
+
+        socket.destroy();
     });
 
     socket.write("1040014116","hex");
