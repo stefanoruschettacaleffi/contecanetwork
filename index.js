@@ -15,13 +15,18 @@ const PORT = 8989;
 let server = net.createServer(onClientConnected);
 server.listen(PORT);
 
+
+
+
+
+
 function onClientConnected(socket) {
 
     socket.setEncoding('hex');
 
     let clientName = `${socket.remoteAddress}:${socket.remotePort}`;
     console.log('New client: ' + clientName);
-    
+
     socket.on('data', (data) => {
 
         let m = data.toString().replace(/[\n\r]*$/, '');
@@ -31,8 +36,9 @@ function onClientConnected(socket) {
 
         socket.destroy();
     });
-
-    socket.write("1040014116","hex");
+    
+    var byteBuffer = new Buffer("1040014116", 'hex');
+    socket.write(byteBuffer);
 }
 
 console.log(`Server started on port: ${PORT}`);
