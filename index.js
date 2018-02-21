@@ -34,17 +34,17 @@ function handleConnection(conn) {
     conn.on("error", handleConnError);
 
     conn.write("1040014116", 'hex');
-}
 
-function handleConnData(data) {
-    console.log("Data received: " + data);
-    connection.destroy();
-}
+    function handleConnData(data) {
+        console.log("Data received: " + data);
+        conn.destroy();
+    }
 
-function handleConnClose(){
-    console.log("Connection close.");
-}
+    function handleConnClose(){
+        console.log("Connection close.");
+    }
 
-function handleConnError(err){
-    console.log("connection error " + err);
+    function handleConnError(err){
+        console.log("connection error " + err);
+    }
 }
