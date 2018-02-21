@@ -7,7 +7,7 @@ const server = net.createServer( (c) => {
 
     c.on( 'data', ( d ) => {
 
-        console.log( d );
+        console.log( d.toString("hex") );
     });
 });
 
