@@ -12,10 +12,9 @@ server.listen(8989);
 
 const PORT = 8989;
 
-
 var server = net.createServer(function(socket) {
 
-    socket.setEncoding("hex");
+    //socket.setEncoding("hex");
 
     socket.write("1040014116", "hex");
 
