@@ -35,7 +35,7 @@ function handleConnection(connection) {
 
     function handleConnData(data) {
         console.log("Data received: " + data);
-        //connection.destroy();
+        connection.destroy();
     }
 
     function handleConnClose(){
