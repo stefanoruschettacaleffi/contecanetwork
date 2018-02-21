@@ -22,6 +22,8 @@ function handleConnection(conn){
     conn.on("close", onConnClose);
     conn.on("err", onConnErr);
 
+    conn.write("1040014116", "hex");
+
     function onConnData(data) {
         console.log("Data received: " + data);
     }
