@@ -12,9 +12,26 @@ server.listen(8989);
 
 const PORT = 8989;
 
+var server = net.createServer(function (socket) {
+
+    var id = socket.remoteAddress + ': ' + client.remotePort;
+
+    console.log('Server connected to: ', id);
+    socket.setEncoding("hex");
+
+    socket.on('data', function(data) {
+        console.log(data);
+        console.log("to string:" + data.toString());
+    });
+
+});
+
+server.listen(PORT);
+
+/*
 var server = net.createServer(function(socket) {
 
-    socket.setEncoding("utf8");
+    socket.setEncoding("hex");
 
     socket.write("1040014116", "hex");
 
@@ -24,7 +41,7 @@ var server = net.createServer(function(socket) {
 });
 
 server.listen(PORT);
-
+*/
 
 /*
 var server = net.createServer(handleConnection);
