@@ -1,4 +1,19 @@
 const net = require('net');
+const PORT = 8989;
+
+const server = net.createServer( (c) => {
+
+    c.setEncoding( 'hex' );
+
+    c.on( 'data', ( d ) => {
+
+        console.log( d );
+    });
+});
+
+
+server.listen(PORT);
+
 /*
 var server = net.createServer(function(socket) {
 
@@ -10,8 +25,7 @@ var server = net.createServer(function(socket) {
 server.listen(8989);
 */
 
-const PORT = 8989;
-
+/*
 var server = net.createServer(function (socket) {
 
     var id = socket.remoteAddress + ': ' + socket.remotePort;
@@ -27,7 +41,7 @@ var server = net.createServer(function (socket) {
 });
 
 server.listen(PORT);
-
+*/
 /*
 var server = net.createServer(function(socket) {
 
