@@ -8,10 +8,9 @@ server.on('connection', handleConnection);
 
 server.listen(PORT , function(){
     console.log("server listening to: %j", server.address());
-})
+});
 
 function handleConnection(conn){
-
 
     var remoteAddress = conn.remoteAddress + ":" + conn.remotePort;
     console.log("New client connection from: " + remoteAddress);
