@@ -27,6 +27,7 @@ function handleConnection(connection) {
 
     console.log("new client connection from :" + remote_address);
 
+    connection.setEncoding('hex');
 
     connection.on("data", handleConnData);
     connection.on("close", handleConnClose);
@@ -34,7 +35,6 @@ function handleConnection(connection) {
 
     function handleConnData(data) {
         console.log("Data received: " + data);
-        console.log("Data received: " + data.toString('hex'));
         //connection.destroy();
     }
 
@@ -46,7 +46,5 @@ function handleConnection(connection) {
         console.log("connection error");
     }
 
-    //var byteBuffer = new Buffer("1040014116", 'hex');
-    connection.setEncoding('hex');
-    connection.write("1040014116");
+    connection.write("1040014116", 'hex');
 }
