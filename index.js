@@ -21,15 +21,9 @@ var server = net.createServer(function (socket) {
 
     socket.on('data', function(data) {
         console.log(data);
-        console.log("to string:" + data.toString());
+        console.log("to string:" + data.toString("hex"));
     });
 
-});
-
-
-server.on("connection", function(conn){
-    console.log('Server connected to: ', conn);
-    conn.setEncoding("hex");
 });
 
 server.listen(PORT);
