@@ -25,7 +25,7 @@ function handleConnection(conn){
     conn.write(byteBuffer);
 
     function onConnData(data) {
-        console.log("Data received: " + data);
+        console.log("Data received: " + data.constructor.name);
     }
 
     function onConnClose(){
