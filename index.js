@@ -12,9 +12,9 @@ server.listen(8989);
 
 const PORT = 8989;
 
-var server = net.createServer();
+var server = net.createServer(handleConnection);
 
-server.on('connection', handleConnection);
+//server.on('connection', handleConnection);
 
 server.listen(PORT, function(){
     console.log(`Server started on port: ${PORT}`);
