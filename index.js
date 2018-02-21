@@ -14,7 +14,7 @@ const PORT = 8989;
 
 var server = net.createServer(function (socket) {
 
-    var id = socket.remoteAddress + ': ' + client.remotePort;
+    var id = socket.remoteAddress + ': ' + socket.remotePort;
 
     console.log('Server connected to: ', id);
     socket.setEncoding("hex");
