@@ -14,7 +14,7 @@ const PORT = 8989;
 
 var server = net.createServer(function(socket) {
 
-    socket.setEncoding("utf-8");
+    socket.setEncoding("utf8");
 
     socket.write("1040014116", "hex");
 
