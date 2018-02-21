@@ -21,30 +21,30 @@ server.listen(PORT, function(){
 });
 
 
-function handleConnection(connection) {
+function handleConnection(conn) {
 
-    var remote_address = connection.remoteAddress + ":" + connection.remotePort;
+    var remote_address = conn.remoteAddress + ":" + conn.remotePort;
 
     console.log("new client connection from :" + remote_address);
 
-    connection.setEncoding('hex');
+    conn.setEncoding('hex');
 
-    connection.on("data", handleConnData);
-    connection.on("close", handleConnClose);
-    connection.on("error", handleConnError);
+    conn.on("data", handleConnData);
+    conn.on("close", handleConnClose);
+    conn.on("error", handleConnError);
 
-    function handleConnData(data) {
-        console.log("Data received: " + data);
-        connection.destroy();
-    }
+    conn.write("1040014116", 'hex');
+}
 
-    function handleConnClose(){
-        console.log("Connection close.");
-    }
+function handleConnData(data) {
+    console.log("Data received: " + data);
+    connection.destroy();
+}
 
-    function handleConnError(){
-        console.log("connection error");
-    }
+function handleConnClose(){
+    console.log("Connection close.");
+}
 
-    connection.write("1040014116", 'hex');
+function handleConnError(err){
+    console.log("connection error " + err);
 }
