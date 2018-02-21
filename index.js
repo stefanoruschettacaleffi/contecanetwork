@@ -21,7 +21,8 @@ function handleConnection(conn){
     conn.on("close", onConnClose);
     conn.on("err", onConnErr);
 
-    conn.write("1040014116", "hex");
+    var byteBuffer = new Buffer("1040014116", 'hex');
+    conn.write(byteBuffer);
 
     function onConnData(data) {
         console.log("Data received: " + data);
