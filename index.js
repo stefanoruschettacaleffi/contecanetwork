@@ -1,13 +1,10 @@
 const net = require('net');
 const PORT = 8989;
 
-const server = net.createServer( (c) => {
+const server = net.createServer( function(socket) {
 
-    c.setEncoding( 'hex' );
-
-    c.on( 'data', ( d ) => {
-
-        console.log( d.toString("hex") );
+    socket.on("data" , function(data) {
+       console.log( data.toString("hex"));
     });
 });
 
