@@ -12,6 +12,22 @@ server.listen(8989);
 
 const PORT = 8989;
 
+
+var server = net.createServer(function(socket) {
+
+    socket.setEncoding("hex");
+
+    socket.write("1040014116", "hex");
+
+    socket.on('data', function(data) {
+        console.log('Received: ' + data);
+    });
+});
+
+server.listen(PORT);
+
+
+/*
 var server = net.createServer(handleConnection);
 
 //server.on('connection', handleConnection);
@@ -47,4 +63,4 @@ function handleConnection(conn) {
     function handleConnError(err){
         console.log("connection error " + err);
     }
-}
+}*/
