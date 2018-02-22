@@ -38,7 +38,12 @@ function handleConnection(conn){
             console.log("Data received for: " + mbus.currentPrimaryAddress);
             console.log("Data: " + data);
 
-            console.log(mbus.checkResponseValidity(data));
+            if(mbus.checkResponseValidity(data)){
+
+            }
+            else {
+                console.log("invalid response");
+            }
 
             conn.destroy();
         }
