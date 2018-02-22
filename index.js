@@ -1,4 +1,6 @@
 const net = require('net');
+const mbus = require('./mbus');
+
 const PORT = 8989;
 
 const server = net.createServer();
@@ -11,8 +13,9 @@ server.listen(PORT , function(){
 
 function handleConnection(conn){
 
+    //Connection configuration
+
     var remoteAddress = conn.remoteAddress + ":" + conn.remotePort;
-    console.log("New client connection from: " + remoteAddress);
 
     conn.setEncoding("hex");
 
@@ -20,10 +23,24 @@ function handleConnection(conn){
     conn.on("close", onConnClose);
     conn.on("err", onConnErr);
 
-    conn.write("1040014116", "hex");
-
     function onConnData(data) {
         console.log("Data received: " + data);
+
+        if (mbus.MBusStatus != mbus.MBusStatusEnum.waitingForAck && data == "e5") {
+
+            console.log("Ack received for: " + mbus.currentPrimaryAddress);
+            console.log("Sending data request to: " + mbus.currentPrimaryAddress);
+
+            mbus.MBusStatus = mbus.MBusStatusEnum.waitingForData;
+
+            conn.write(mbus.dataForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
+        }
+        else if(mbus.MBusStatus == mbus.MBusStatusEnum.waitingForData) {
+            console.log("Data received for: " + mbus.currentPrimaryAddress);
+            console.log("Data: " + data);
+
+            conn.destroy();
+        }
     }
 
     function onConnClose(){
@@ -33,4 +50,14 @@ function handleConnection(conn){
     function onConnErr(err) {
         console.log("Connection error: " + err);
     }
+
+
+    //Data
+    console.log("New client connection from: " + remoteAddress);
+
+    mbus.currentPrimaryAddress = "01";
+    mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
+    console.log("Sending Ack to" + mbus.currentPrimaryAddress);
+
+    conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
 }
