@@ -1,6 +1,4 @@
-
 module.exports = MBusFrame;
-
 
 function MBusFrame(message) {
 

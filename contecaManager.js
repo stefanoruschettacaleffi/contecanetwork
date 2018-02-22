@@ -49,7 +49,7 @@ function handleConnection(conn){
             console.log("Data: " + data);
 
             if (mbus.checkResponseValidity(data)) {
-                var frame = new MBusFrame(data.substr(8, data.length - 42));
+                var frame = new MBusFrame(data);
                 console.log(frame);
             }
             else {
