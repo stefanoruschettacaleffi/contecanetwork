@@ -32,7 +32,7 @@ module.exports = {
 
 
     checksum: function(message) {
-        if(message%2 == 0) {
+        if(message.length%2 == 0) {
 
             var sum = 0;
             for (var c = 0; c < str.length; c += 2) {
