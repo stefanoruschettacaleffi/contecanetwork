@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c48714-b3c4-4b80-8a8e-8acfde63d656" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/MBusFrame.js" afterPath="$PROJECT_DIR$/MBusFrame.js" />
+      <change beforePath="$PROJECT_DIR$/contecaManager.js" afterPath="$PROJECT_DIR$/contecaManager.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,8 +41,8 @@
       <file leaf-file-name="contecaManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contecaManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="416">
+              <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -59,11 +61,9 @@
       <file leaf-file-name="MBusFrame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MBusFrame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <marker date="1519306867505" expanded="false" signature="3782:5564" ph="/*...*/" />
-              </folding>
+            <state relative-caret-position="-3442">
+              <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,6 +77,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>push</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -85,9 +90,9 @@
       <list>
         <option value="$PROJECT_DIR$/measure.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/contecaManager.js" />
         <option value="$PROJECT_DIR$/mbus.js" />
         <option value="$PROJECT_DIR$/MBusFrame.js" />
+        <option value="$PROJECT_DIR$/contecaManager.js" />
       </list>
     </option>
   </component>
@@ -174,12 +179,12 @@
       <option name="presentableId" value="Default" />
       <updated>1519228977342</updated>
       <workItem from="1519228978444" duration="1656000" />
-      <workItem from="1519286022836" duration="13464000" />
+      <workItem from="1519286022836" duration="15379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15120000" />
+    <option name="totallyTimeSpent" value="17035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="796" extended-state="6" />
@@ -248,14 +253,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contecaManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mbus.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-507">
@@ -264,13 +261,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/contecaManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MBusFrame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <marker date="1519306867505" expanded="false" signature="3782:5564" ph="/*...*/" />
-          </folding>
+        <state relative-caret-position="-3442">
+          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>

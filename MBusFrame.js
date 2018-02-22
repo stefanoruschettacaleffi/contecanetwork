@@ -1,195 +1,95 @@
-module.exports = {
 
-    c_field: null,
-    a_field: null,
-    ci_field: null,
-    data_header: null,
-    version_id: null,
-    access_number: null,
-    status_byte: null,
-    signature_field: null,
-    manufacturer: null,
-    device_type: null,
-    data_blocks: [],
-
-    createMBusFrame: function(message) {
-
-        this.c_field = message.substr(0,2);
-        this.a_field = message.substr(2,2);
-        this.ci_field = message.substr(4,2);
-        this.data_header = message.substr(6,8);
-        this.version_id = message.substr(18,2);
-        this.access_number = message.substr(22,2);
-        this.status_byte = message.substr(24,2);
-        this.signature_field = message.substr(26,4);
-
-        //Manufacturer
-        var manbin = hex2bin(message.substr(16,2)) + hex2bin(message.substr(14,2));
-        this.manufacturer = ( String.fromCharCode(parseInt("010" + manbin.substr(1,5),2)) + String.fromCharCode(parseInt("010" + manbin.substr(6,5),2)) + String.fromCharCode(parseInt("010" + manbin.substr(11,5),2)));
-
-        //Device type
-        this.device_type = getDeviceType(message.substr(20,2));
-
-        var dataBlocks_message = message.substr(30, message.length - 34);
-
-        while (dataBlocks_message.length > 0) {
-
-            var dataBlock = new MBusDataBlock();
-
-            dataBlocks_message = [dataBlocks_message];
-            dataBlock.popDataBlockFromMessage( dataBlocks_message );
-            dataBlocks_message = dataBlocks_message[0];
-
-            this.data_blocks.push(dataBlock);
-        }
-
-        return this;
-    }
-};
+module.exports = MBusFrame;
 
 
-function getDeviceType(deviceTypeId){
-    switch (deviceTypeId){
-        case "00":
-            return "Other";
-        case "01":
-            return "Oil";
-        case "02":
-            return "Electricity";
-        case "03":
-            return "Gas";
-        case "04":
-            return "Heat";
-        case "05":
-            return "Steam";
-        case "06":
-            return "Warm water";
-        case "07":
-            return "Water";
-        case "08":
-            return "Heat cost allocator";
-        case "09":
-            return "Compressed air";
-        case "0a":
-            return "Cooling load meter (Volume measured at return temperature)";
-        case "0b":
-            return "Cooling load meter (Volume measured at flow temperature: inlet)";
-        case "0c":
-            return "Heat";
-        case "0d":
-            return "Heat / Cooling load meter";
-        case "0e":
-            return "Bus / System component";
-        case "0f":
-            return "Unknown Medium";
-        case "15":
-            return "Hot water";
-        case "16":
-            return "Cold water";
-        case "17":
-            return "Dual register (hot/cold) water meter";
-        case "18":
-            return "Pressure";
-        case "19":
-            return "A/D Converter";
-        default:
-            return "Reserved";
-    }
-}
-
-
-
-/*
 function MBusFrame(message) {
 
-      //this.sc = message.substr(0,2);
-      //this.l = message.substr(2,2);
-      //this.c_field = message.substr(8,2);
-      //this.a_field = message.substr(10,2);
-      //this.ci_field = message.substr(12,2);
-      //this.data_header = message.substr(14,8);
-      //this.version_id = message.substr(26,2);
-      //this.access_number = message.substr(30,2);
-      //this.status_byte = message.substr(32,2);
-      //this.signature_field = message.substr(34,4);
-      //this.checksum = message.substr(message.length - 4, 2);
+      this.sc = message.substr(0,2);
+      this.l = message.substr(2,2);
+      this.c_field = message.substr(8,2);
+      this.a_field = message.substr(10,2);
+      this.ci_field = message.substr(12,2);
+      this.data_header = message.substr(14,8);
+      this.version_id = message.substr(26,2);
+      this.access_number = message.substr(30,2);
+      this.status_byte = message.substr(32,2);
+      this.signature_field = message.substr(34,4);
+      this.checksum = message.substr(message.length - 4, 2);
 
-      //var manbin = hex2bin(message.substr(24,2)) + hex2bin(message.substr(22,2));
-      //this.manufacturer = ( String.fromCharCode(parseInt("010" + manbin.substr(1,5),2)) + String.fromCharCode(parseInt("010" + manbin.substr(6,5),2)) + String.fromCharCode(parseInt("010" + manbin.substr(11,5),2)));
-
+      var manbin = hex2bin(message.substr(24,2)) + hex2bin(message.substr(22,2));
+      this.manufacturer = ( String.fromCharCode(parseInt("010" + manbin.substr(1,5),2)) + String.fromCharCode(parseInt("010" + manbin.substr(6,5),2)) + String.fromCharCode(parseInt("010" + manbin.substr(11,5),2)));
 
       //Device type
-    /*switch (message.substr(28,2)){
-      case "00":
-        this.device_type = "Other";
-        break;
-      case "01":
-        this.device_type = "Oil";
-        break;
-      case "02":
-        this.device_type = "Electricity";
-        break;
-      case "03":
-        this.device_type = "Gas";
-        break;
-      case "04":
-        this.device_type = "Heat";
-        break;
-      case "05":
-        this.device_type = "Steam";
-        break;
-      case "06":
-        this.device_type = "Warm water";
-        break;
-      case "07":
-        this.device_type = "Water";
-        break;
-      case "08":
-        this.device_type = "Heat cost allocator";
-        break;
-      case "09":
-        this.device_type = "Compressed air";
-        break;
-      case "0a":
-        this.device_type = "Cooling load meter (Volume measured at return temperature)";
-        break;
-      case "0b":
-        this.device_type = "Cooling load meter (Volume measured at flow temperature: inlet)";
-        break;
-      case "0c":
-        this.device_type = "Heat";
-        break;
-      case "0d":
-        this.device_type = "Heat / Cooling load meter";
-        break;
-      case "0e":
-        this.device_type = "Bus / System component";
-        break;
-      case "0f":
-        this.device_type = "Unknown Medium";
-        break;
-      case "15":
-        this.device_type = "Hot water";
-        break;
-      case "16":
-        this.device_type = "Cold water";
-        break;
-      case "17":
-        this.device_type = "Dual register (hot/cold) water meter";
-        break;
-      case "18":
-        this.device_type = "Pressure";
-        break;
-      case "19":
-          this.device_type = "A/D Converter";
-          break;
-      default:
-        this.device_type = "Reserved";
-        break;
+      switch (message.substr(28,2)) {
+            case "00":
+                this.device_type = "Other";
+                break;
+            case "01":
+                this.device_type = "Oil";
+                break;
+                case "02":
+                this.device_type = "Electricity";
+                break;
+              case "03":
+                this.device_type = "Gas";
+                break;
+              case "04":
+                this.device_type = "Heat";
+                break;
+              case "05":
+                this.device_type = "Steam";
+                break;
+              case "06":
+                this.device_type = "Warm water";
+                break;
+              case "07":
+                this.device_type = "Water";
+                break;
+              case "08":
+                this.device_type = "Heat cost allocator";
+                break;
+              case "09":
+                this.device_type = "Compressed air";
+                break;
+              case "0a":
+                this.device_type = "Cooling load meter (Volume measured at return temperature)";
+                break;
+              case "0b":
+                this.device_type = "Cooling load meter (Volume measured at flow temperature: inlet)";
+                break;
+              case "0c":
+                this.device_type = "Heat";
+                break;
+              case "0d":
+                this.device_type = "Heat / Cooling load meter";
+                break;
+              case "0e":
+                this.device_type = "Bus / System component";
+                break;
+              case "0f":
+                this.device_type = "Unknown Medium";
+                break;
+              case "15":
+                this.device_type = "Hot water";
+                break;
+              case "16":
+                this.device_type = "Cold water";
+                break;
+              case "17":
+                this.device_type = "Dual register (hot/cold) water meter";
+                break;
+              case "18":
+                this.device_type = "Pressure";
+                break;
+              case "19":
+                  this.device_type = "A/D Converter";
+                  break;
+              default:
+                this.device_type = "Reserved";
+                break;
     }
-    */
-      //this.dataBlocks = [];
-    /*
+    this.dataBlocks = [];
+
       var dataBlocks_message = message.substr(38, message.length - 42);
 
 
@@ -204,7 +104,6 @@ function MBusFrame(message) {
           this.dataBlocks.push(dataBlock);
       }
 }
-*/
 
 //Utilities
 
