@@ -22,6 +22,30 @@ module.exports = {
         return this.createTelegram("7B" + primaryAddress);
     },
 
+    checkResponseValidity: function(response) {
+
+        if (response.length %2 === 0 && response.length >= 10) {
+
+            var head = response.substr(0, 8);
+            var tail = response.substr(response.length - 2, 2);
+
+            if (head.substr(0,2) === head.substr(6,2) === "68" && tail === "16") {
+
+                console.log("Valid head and tail");
+
+                var body = response.substr(8, response.length - 12);
+                var cs = response.substr(response.length - 4, 2);
+                var messageLength = response.substr(2, 2);
+
+                if(this.checksum(body) === cs) {
+                    console.log("valid checksum");
+                }
+            }
+        }
+        return false;
+    },
+
+
 
     /*-- Support functions ---*/
 
@@ -30,9 +54,8 @@ module.exports = {
         return ("10" + telegramBody + cs +"16");
     },
 
-
     checksum: function(message) {
-        if(message.length%2 === 0) {
+        if (message.length%2 === 0) {
 
             var sum = 0;
             for (var c = 0; c < message.length; c += 2) {
@@ -47,19 +70,5 @@ module.exports = {
 
             return res;
         }
-    },
-
-
-    checkResponseValidity: function(response) {
-
-        if(response.length %2 == 0 && response.length >= 10) {
-
-            var head = response.substr(0, 8);
-            var tail = response.substr(response.length - 3, 2);
-
-            console.log("head: " + head + " tail: " + tail );
-        }
-        return true;
     }
-
 };
