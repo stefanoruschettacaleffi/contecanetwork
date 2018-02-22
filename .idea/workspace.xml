@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66c48714-b3c4-4b80-8a8e-8acfde63d656" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/MBusFrame.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/contecaManager.js" afterPath="$PROJECT_DIR$/contecaManager.js" />
-      <change beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change beforePath="$PROJECT_DIR$/mbus.js" afterPath="$PROJECT_DIR$/mbus.js" />
+      <change beforePath="$PROJECT_DIR$/MBusFrame.js" afterPath="$PROJECT_DIR$/MBusFrame.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mbus.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mbus.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mbus.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-507">
+              <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -60,13 +56,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MBusFrame.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MBusFrame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MBusFrame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="190" column="69" lean-forward="false" selection-start-line="190" selection-start-column="47" selection-end-line="190" selection-end-column="69" />
+            <state relative-caret-position="276">
+              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding>
-                <marker date="1519306036168" expanded="false" signature="3761:5543" ph="/*...*/" />
+                <marker date="1519306668381" expanded="false" signature="3759:5541" ph="/*...*/" />
               </folding>
             </state>
           </provider>
@@ -89,9 +85,9 @@
       <list>
         <option value="$PROJECT_DIR$/measure.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/MBusFrame.js" />
         <option value="$PROJECT_DIR$/contecaManager.js" />
         <option value="$PROJECT_DIR$/mbus.js" />
+        <option value="$PROJECT_DIR$/MBusFrame.js" />
       </list>
     </option>
   </component>
@@ -178,12 +174,12 @@
       <option name="presentableId" value="Default" />
       <updated>1519228977342</updated>
       <workItem from="1519228978444" duration="1656000" />
-      <workItem from="1519286022836" duration="13158000" />
+      <workItem from="1519286022836" duration="13282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14814000" />
+    <option name="totallyTimeSpent" value="14938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="796" extended-state="6" />
@@ -244,16 +240,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MBusFrame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="190" column="69" lean-forward="false" selection-start-line="190" selection-start-column="47" selection-end-line="190" selection-end-column="69" />
-          <folding>
-            <marker date="1519306036168" expanded="false" signature="3761:5543" ph="/*...*/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/measure.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -272,9 +258,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mbus.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-507">
+          <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MBusFrame.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding>
+            <marker date="1519306668381" expanded="false" signature="3759:5541" ph="/*...*/" />
+          </folding>
         </state>
       </provider>
     </entry>

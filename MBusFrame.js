@@ -10,7 +10,7 @@ module.exports = {
     signature_field: null,
     manufacturer: null,
     device_type: null,
-    data_blocks: null,
+    data_blocks: [],
 
     createMBusFrame: function(message) {
 
