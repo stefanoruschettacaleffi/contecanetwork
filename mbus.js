@@ -32,11 +32,11 @@ module.exports = {
 
 
     checksum: function(message) {
-        if(message.length%2 == 0) {
+        if(message.length%2 === 0) {
 
             var sum = 0;
-            for (var c = 0; c < str.length; c += 2) {
-                sum += parseInt(str.substr(c, 2), 16);
+            for (var c = 0; c < message.length; c += 2) {
+                sum += parseInt(message.substr(c, 2), 16);
             }
 
             var res = (sum % 256).toString(16);
