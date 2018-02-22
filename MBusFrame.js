@@ -386,8 +386,8 @@ MBusDataBlock.prototype.VIFAnalysis = function(){
           this.measure_unit = "Wh";
           this.multiplier = Math.pow(10, parseInt(hexvif.substr(hexvif.length - 3, 3), 2) - 3);
 
-          if(this.multiplier >= 3){
-            this.multiplier -= 3;
+          if(this.multiplier >= 1000){
+            this.multiplier -= 1000;
             this.measure_unit = "kWh";
           }
 
@@ -405,11 +405,11 @@ MBusDataBlock.prototype.VIFAnalysis = function(){
           this.measure_unit = "J";
           this.multiplier = Math.pow(10, parseInt(hexvif.substr(hexvif.length - 3, 3), 2));
 
-          if(this.multiplier >= 3){
-            this.multiplier -= 3;
+          if(this.multiplier >= 1000){
+            this.multiplier -= 1000;
             this.measure_unit = "kJ";
           }
-
+          
           this.measure_desc = "Energy";
           break;
 

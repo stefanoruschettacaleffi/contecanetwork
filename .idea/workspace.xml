@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="66c48714-b3c4-4b80-8a8e-8acfde63d656" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/MBusFrame.js" afterPath="$PROJECT_DIR$/MBusFrame.js" />
-      <change beforePath="$PROJECT_DIR$/contecaManager.js" afterPath="$PROJECT_DIR$/contecaManager.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,21 +36,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contecaManager.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="contecaManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contecaManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="1081">
+              <caret line="47" column="76" lean-forward="true" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MBusFrame.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MBusFrame.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MBusFrame.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="-5962">
+              <caret line="411" column="10" lean-forward="false" selection-start-line="411" selection-start-column="10" selection-end-line="411" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -80,8 +79,8 @@
         <option value="$PROJECT_DIR$/measure.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/mbus.js" />
-        <option value="$PROJECT_DIR$/MBusFrame.js" />
         <option value="$PROJECT_DIR$/contecaManager.js" />
+        <option value="$PROJECT_DIR$/MBusFrame.js" />
       </list>
     </option>
   </component>
@@ -168,12 +167,12 @@
       <option name="presentableId" value="Default" />
       <updated>1519228977342</updated>
       <workItem from="1519228978444" duration="1656000" />
-      <workItem from="1519286022836" duration="15672000" />
+      <workItem from="1519286022836" duration="16394000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17328000" />
+    <option name="totallyTimeSpent" value="18050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="796" extended-state="6" />
@@ -250,18 +249,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MBusFrame.js">
+    <entry file="file://$PROJECT_DIR$/contecaManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="1081">
+          <caret line="47" column="76" lean-forward="true" selection-start-line="47" selection-start-column="76" selection-end-line="47" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contecaManager.js">
+    <entry file="file://$PROJECT_DIR$/MBusFrame.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="-5962">
+          <caret line="411" column="10" lean-forward="false" selection-start-line="411" selection-start-column="10" selection-end-line="411" selection-end-column="10" />
           <folding />
         </state>
       </provider>
