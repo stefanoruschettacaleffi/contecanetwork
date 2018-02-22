@@ -24,7 +24,6 @@ function handleConnection(conn){
     conn.on("err", onConnErr);
 
     function onConnData(data) {
-        console.log("Data received: " + data);
 
         if (mbus.MBusStatus === mbus.MBusStatusEnum.waitingForAck && data === "e5") {
 
@@ -57,8 +56,7 @@ function handleConnection(conn){
 
     mbus.currentPrimaryAddress = "01";
     mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
-    console.log("Sending Ack to " + mbus.currentPrimaryAddress);
-
+    
     console.log(mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress)) ;
     conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
 }
