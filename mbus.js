@@ -19,7 +19,7 @@ module.exports = {
 
     dataForPrimaryAddress: function(primaryAddress){
         exports.currentPrimaryAddress = primaryAddress;
-        return this.createTelegram("40" + primaryAddress);
+        return this.createTelegram("7B" + primaryAddress);
     },
 
 
