@@ -57,7 +57,8 @@ function handleConnection(conn){
 
     mbus.currentPrimaryAddress = "01";
     mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
-    console.log("Sending Ack to" + mbus.currentPrimaryAddress);
+    console.log("Sending Ack to " + mbus.currentPrimaryAddress);
 
+    console.log(mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress)) ;
     conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
 }
