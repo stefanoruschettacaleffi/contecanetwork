@@ -42,6 +42,8 @@ module.exports = {
 
             this.data_blocks.push(dataBlock);
         }
+
+        return this;
     }
 };
 
