@@ -1,8 +1,8 @@
 const net = require('net');
 const mbus = require('./mbus');
+const MBusFrame = require('./MBusFrame');
 
 var server = null;
-
 
 module.exports = {
 
@@ -49,7 +49,8 @@ function handleConnection(conn){
             console.log("Data: " + data);
 
             if (mbus.checkResponseValidity(data)) {
-
+                var frame = MBusFrame.createMBusFrame(data.substr(8, data.length - 42));
+                console.log(frame);
             }
             else {
                 console.log("invalid response");

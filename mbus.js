@@ -1,5 +1,3 @@
-
-
 module.exports = {
 
     MBusStatusEnum: Object.freeze({"pending":1, "waitingForAck":2, "waitingForData":3}),
@@ -8,7 +6,6 @@ module.exports = {
 
     MBusStatus : 1,
     currentPrimaryAddress : null,
-
 
     /*--- Main functions---*/
 
@@ -44,7 +41,6 @@ module.exports = {
     },
 
 
-
     /*-- Support functions ---*/
 
     createTelegram: function(telegramBody) {
@@ -62,7 +58,7 @@ module.exports = {
 
             var res = (sum % 256).toString(16);
 
-            if (res.length == 1) {
+            if (res.length === 1) {
                 res = "0" + res;
             }
 
