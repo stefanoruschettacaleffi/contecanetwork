@@ -14,21 +14,22 @@ module.exports = {
 
     ackForPrimaryAddress: function(primaryAddress){
         exports.currentPrimaryAddress = primaryAddress;
-        return exports.createTelegram("40" + primaryAddress);
+        return this.createTelegram("40" + primaryAddress);
     },
 
     dataForPrimaryAddress: function(primaryAddress){
         exports.currentPrimaryAddress = primaryAddress;
-        return exports.createTelegram("40" + primaryAddress);
+        return this.createTelegram("40" + primaryAddress);
     },
 
 
     /*-- Support functions ---*/
 
     createTelegram: function(telegramBody) {
-        var cs = exports.checksum(telegramBody);
+        var cs = this.checksum(telegramBody);
         return ("10" + telegramBody + cs +"16");
     },
+
 
     checksum: function(message) {
         if(message%2 == 0) {
