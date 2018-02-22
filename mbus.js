@@ -24,12 +24,14 @@ module.exports = {
 
     checkResponseValidity: function(response) {
 
-        if (response.length %2 === 0 && response.length >= 10) {
+        if ((response.length%2 === 0) && (response.length >= 12)) {
+
+            console.log("valid length");
 
             var head = response.substr(0, 8);
             var tail = response.substr(response.length - 2, 2);
 
-            if (head.substr(0,2) === head.substr(6,2) === "68" && tail === "16") {
+            if ((head.substr(0,2) === "68") && (head.substr(6,2) === "68") && (tail === "16")) {
 
                 console.log("Valid head and tail");
 
