@@ -48,4 +48,18 @@ module.exports = {
             return res;
         }
     }
+
+
+    checkResponseValidity: function(response) {
+
+        if(response.length %2 == 0 && response.length >= 10) {
+
+            var head = response.substr(0, 8);
+            var tail = response.substr(tail.length - 3, 2);
+
+            console.log("head: " + head + " tail: " + tail );
+        }
+        return true;
+    }
+
 };

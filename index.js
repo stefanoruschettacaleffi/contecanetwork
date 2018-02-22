@@ -38,6 +38,8 @@ function handleConnection(conn){
             console.log("Data received for: " + mbus.currentPrimaryAddress);
             console.log("Data: " + data);
 
+            mbus.checkResponseValidity(data);
+
             conn.destroy();
         }
     }
@@ -56,7 +58,6 @@ function handleConnection(conn){
 
     mbus.currentPrimaryAddress = "01";
     mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
-    
-    console.log(mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress)) ;
+
     conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
 }
