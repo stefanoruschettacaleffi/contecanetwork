@@ -40,7 +40,7 @@ module.exports = {
             dataBlock.popDataBlockFromMessage( dataBlocks_message );
             dataBlocks_message = dataBlocks_message[0];
 
-            this.dataBlocks.push(dataBlock);
+            this.data_blocks.push(dataBlock);
         }
     }
 };
