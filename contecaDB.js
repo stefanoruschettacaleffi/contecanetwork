@@ -69,7 +69,7 @@ function createMeasure(energy, volume, power, volume_flow, flow_temperature, ret
                                 volume_3: volume_3,
                                 volume_4: volume_4,
                                 energy_1: energy_1,
-                                related_conteca: related_conteca});
+                                related_conteca: related_conteca._id});
 
     measure.save(function(err, measure){
         if(err) {
@@ -100,7 +100,7 @@ function createConcentrator(name) {
 }
 
 function createConteca(primary_address, concentrator) {
-    var conteca = new Conteca({primary_address, concentrator});
+    var conteca = new Conteca({primary_address, concentrator._id});
 
     conteca.save(function(err, conteca) {
         if (err) {
@@ -124,6 +124,7 @@ function createDummyDB(){
             if(result == null){
                 var concentrator =  createConcentrator("Test concentrator");
                 createConteca("01", concentrator);
+                createConteca("02", concentrator);
             }
         }
     });
