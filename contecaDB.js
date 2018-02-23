@@ -79,6 +79,8 @@ function createMeasure(energy, volume, power, volume_flow, flow_temperature, ret
             console.log("Measure: " + measure + "correctly saved on DB.");
         }
     });
+
+    return measure;
 }
 
 
@@ -93,6 +95,8 @@ function createConcentrator(name) {
             console.log("Concentrator: " + concentrator + "correctly saved on DB.");
         }
     });
+
+    return concentrator;
 }
 
 function createConteca(primary_address, concentrator) {
@@ -106,6 +110,8 @@ function createConteca(primary_address, concentrator) {
             console.log("Conteca: " + conteca + "correctly saved on DB.");
         }
     });
+
+    return conteca;
 }
 
 
@@ -114,8 +120,11 @@ function createDummyDB(){
     Concentrator.findOne(function(err, result){
         if (!err) {
             console.log("Found: " + result);
-            
 
+            if(result == null){
+                var concentrator =  createConcentrator("Test concentrator");
+                createConteca("01", concentrator);
+            }
         }
     });
 
