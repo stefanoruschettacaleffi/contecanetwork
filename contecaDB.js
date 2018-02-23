@@ -143,9 +143,7 @@ function createDummyDB(){
 //TODO: Read objects
 
 function getAllContecasRelatedTo(concentrator) {
-     Conteca.find({related_concentrator: ObjectId(concentrator)}, function(err, res){
-         return res;
-    });
+     Conteca.find({related_concentrator: ObjectId(concentrator)});
 }
 
 //Export functions
