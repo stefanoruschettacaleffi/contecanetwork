@@ -57,8 +57,7 @@ function handleConnection(conn){
             console.log("Data: " + data);
 
             if (mbus.checkResponseValidity(data)) {
-                var frame = new MBusFrame(data);
-                console.log(frame);
+                saveMeasureOnDBFromData(data);
             }
             else {
                 console.log("invalid response");
@@ -82,4 +81,24 @@ function handleConnection(conn){
     mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
 
     conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
+}
+
+
+function saveMeasureOnDBFromData(data) {
+    var frame = new MBusFrame(data);
+
+    var energy = (frame.dataBlocks[2]).data;
+    var volume = (frame.dataBlocks[3]).data;
+    var power = (frame.dataBlocks[4]).data;
+    var volume_flow = (frame.dataBlocks[5]).data;
+    var flow_temperature = (frame.dataBlocks[6]).data;
+    var return_temperature = (frame.dataBlocks[7]).data;
+    var volume_1 = (frame.dataBlocks[12]).data;
+    var volume_2 = (frame.dataBlocks[13]).data;
+    var volume_3 = (frame.dataBlocks[14]).data;
+    var volume_4 = (frame.dataBlocks[15]).data;
+    var energy_1 = (frame.dataBlocks[16]).data;
+
+    contecaDB.createMeasure(energy, volume, power, volume_flow, flow_temperature, return_temperature,
+                            volume_1, volume_2, volume_3, volume_4, energy_1);
 }
