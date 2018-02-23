@@ -116,6 +116,7 @@ function createConteca(primary_address, related_concentrator) {
 }
 
 
+
 function createDummyDB(){
     //Find concentrators
     Concentrator.findOne(function(err, result){
@@ -141,8 +142,12 @@ function createDummyDB(){
 
 //TODO: Read objects
 
+function getAllContecasRelatedTo(concentrator) {
+    return Conteca.findOne({related_concentrator: concentrator});
+}
 
 //Export functions
 
 module.exports.connectToDB = connectToDB;
 module.exports.createMeasure = createMeasure;
+module.exports.getAllContecasRelatedTo = getAllContecasRelatedTo;

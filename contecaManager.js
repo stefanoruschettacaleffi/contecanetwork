@@ -20,6 +20,10 @@ module.exports = {
 
         server.listen (this.listeningPort, function(){
             console.log("server listening to: %j", server.address());
+
+            var contecas = contecaDB.getAllContecasRelatedTo("5a9034a013d8f322b989d57d");
+            console.log("contecas: " + contecas);
+
         });
 
         //DB connection
@@ -76,6 +80,8 @@ function handleConnection(conn){
 
     //Data
     console.log("New client connection from: " + remoteAddress);
+
+    //5a9034a013d8f322b989d57d
 
     mbus.currentPrimaryAddress = "01";
     mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
