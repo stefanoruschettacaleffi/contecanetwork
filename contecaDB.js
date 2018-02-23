@@ -142,7 +142,7 @@ function createDummyDB(){
 //TODO: Read objects
 
 function getAllContecasRelatedTo(concentrator) {
-    return Conteca.findOne({related_concentrator: ObjectID(concentrator)});
+    return Conteca.findOne({related_concentrator: new Schema.ObjectID(concentrator)});
 }
 
 //Export functions
