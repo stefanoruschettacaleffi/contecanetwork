@@ -33,4 +33,4 @@ function connectToDB() {
 
 //Export functions
 
-module.exports.connectToDB = connectToDB();
+module.exports.connectToDB = connectToDB;
