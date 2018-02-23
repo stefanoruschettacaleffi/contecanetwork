@@ -142,7 +142,7 @@ function createDummyDB(){
 //TODO: Read objects
 
 function getAllContecasRelatedTo(concentrator) {
-    return Conteca.findOne({related_concentrator: concentrator});
+    return Conteca.findOne();
 }
 
 //Export functions
