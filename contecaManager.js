@@ -23,9 +23,10 @@ module.exports = {
 
             var contecas = contecaDB.getAllContecasRelatedTo("5a9034a013d8f322b989d57d");
 
-            contecas.forEach( function(conteca){
+            for (var i = 0, len = contecas.length; i < len; i++) {
+                var conteca = contecas[i];
                 console.log("Conteca: " + conteca);
-            });
+            }
         });
 
         //DB connection

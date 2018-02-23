@@ -121,7 +121,6 @@ function createDummyDB(){
     //Find concentrators
     Concentrator.findOne(function(err, result){
         if (!err) {
-            console.log("Found: " + result);
 
             if(result == null){
                 var concentrator =  createConcentrator("Test concentrator");
