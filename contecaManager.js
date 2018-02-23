@@ -22,8 +22,10 @@ module.exports = {
             console.log("server listening to: %j", server.address());
 
             var contecas = contecaDB.getAllContecasRelatedTo("5a9034a013d8f322b989d57d");
-            console.log("contecas: " + contecas);
 
+            contecas.forEach( function(conteca){
+                console.log("Conteca: " + conteca);
+            });
         });
 
         //DB connection
