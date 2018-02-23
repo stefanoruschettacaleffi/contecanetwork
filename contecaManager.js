@@ -2,6 +2,8 @@ const net = require('net');
 const mbus = require('./mbus');
 const MBusFrame = require('./MBusFrame');
 
+const contecaDB = require('./contecaDB');
+
 var server = null;
 
 module.exports = {
@@ -10,6 +12,7 @@ module.exports = {
 
     createServer : function(listeningPort) {
 
+        //Net connection
         this.listeningPort = listeningPort;
 
         server = net.createServer();
@@ -18,8 +21,13 @@ module.exports = {
         server.listen (this.listeningPort, function(){
             console.log("server listening to: %j", server.address());
         });
+
+        //DB connection
+
+        contecaDB.connectToDB();
     }
 };
+
 
 function handleConnection(conn){
 
@@ -55,7 +63,6 @@ function handleConnection(conn){
             else {
                 console.log("invalid response");
             }
-
             conn.destroy();
         }
     }
@@ -67,7 +74,6 @@ function handleConnection(conn){
     function onConnErr(err) {
         console.log("Connection error: " + err);
     }
-
 
     //Data
     console.log("New client connection from: " + remoteAddress);

@@ -346,7 +346,7 @@ MBusDataBlock.prototype.DIFAnalysis = function(){
       this.data_type = "Special function";
       break;
   }
-}
+};
 
 
 MBusDataBlock.prototype.DIFEAnalysis = function(){
@@ -367,7 +367,7 @@ MBusDataBlock.prototype.DIFEAnalysis = function(){
       this.device_unit = hexDife.substr(1, 1) + this.device_unit;
     }, this);
   }
-}
+};
 
 
 MBusDataBlock.prototype.VIFAnalysis = function(){
@@ -686,7 +686,7 @@ MBusDataBlock.prototype.VIFAnalysis = function(){
             this.measure_desc = "Manufacturer specific";
             break;
     }
-}
+};
 
 //Config caleffi: 6808086853FF51017C0150007116
 //Config BCD: 6808086853FF51017C0150017216
