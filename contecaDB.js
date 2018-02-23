@@ -85,7 +85,7 @@ function createMeasure(energy, volume, power, volume_flow, flow_temperature, ret
 
 
 function createConcentrator(name) {
-    var concentrator = new Concentrator(name);
+    var concentrator = new Concentrator({name});
 
     concentrator.save(function(err, concentrator) {
         if (err) {
@@ -100,7 +100,7 @@ function createConcentrator(name) {
 }
 
 function createConteca(primary_address, concentrator) {
-    var conteca = new Conteca(primary_address, concentrator);
+    var conteca = new Conteca({primary_address, concentrator});
 
     conteca.save(function(err, conteca) {
         if (err) {
