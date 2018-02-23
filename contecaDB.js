@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var ObjectId = require('mongoose').Types.ObjectId;
 var Schema = mongoose.Schema;
 
 const DBHost = 'mongodb://localhost/contecanetwork';
@@ -142,7 +143,7 @@ function createDummyDB(){
 //TODO: Read objects
 
 function getAllContecasRelatedTo(concentrator) {
-    return Conteca.findOne({related_concentrator: new Schema.ObjectID(concentrator)});
+    return Conteca.findOne({related_concentrator: ObjectID(concentrator)});
 }
 
 //Export functions
