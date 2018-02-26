@@ -19,11 +19,14 @@ module.exports = {
         server.on('connection', handleConnection);
 
         server.listen (this.listeningPort, function(){
+
             console.log("server listening to: %j", server.address());
 
-            contecaDB.getAllContecasRelatedTo("5a9034a013d8f322b989d57d");
-
-
+            contecaDB.getAllContecasRelatedTo("5a9034a013d8f322b989d57d", function(err, results) {
+                if (!err) {
+                    console.log(results);
+                }
+            });
         });
 
         //DB connection
