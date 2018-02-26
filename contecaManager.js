@@ -91,12 +91,10 @@ function handleConnection(conn){
 
     //5a9034a013d8f322b989d57d
 
-
-
     contecaDB.getAllContecasRelatedToConcentrator("5a9034a013d8f322b989d57d", function(err, results) {
         if (!err) {
             contecas = results;
-            startInterrogationOf(contecas[currentConteca]);
+            startInterrogationOf(contecas[currentContecaIndex]);
         }
     });
 }
