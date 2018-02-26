@@ -21,14 +21,9 @@ module.exports = {
         server.listen (this.listeningPort, function(){
             console.log("server listening to: %j", server.address());
 
-            var contecas = contecaDB.getAllContecasRelatedTo("5a9034a013d8f322b989d57d");
+            contecaDB.getAllContecasRelatedTo("5a9034a013d8f322b989d57d");
 
 
-            for (var i = 0, len = contecas.length; i < len; i++) {
-                var conteca = contecas[i];
-                console.log("Conteca: " + conteca);
-            }
-            
         });
 
         //DB connection
