@@ -97,15 +97,17 @@ function handleConnection(conn){
             startInterrogationOf(contecas[currentContecaIndex]);
         }
     });
+
+    function startInterrogationOf(conteca) {
+
+        mbus.currentPrimaryAddress = conteca.primary_address;
+        mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
+        conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
+
+    }
 }
 
-function startInterrogationOf(conteca) {
 
-    mbus.currentPrimaryAddress = conteca.primary_address;
-    mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
-    conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
-
-}
 
 
 function saveMeasureOnDBFromData(data) {
