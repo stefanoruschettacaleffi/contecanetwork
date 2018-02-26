@@ -24,9 +24,9 @@ module.exports = {
 
             contecaDB.getAllContecasRelatedToConcentrator("5a9034a013d8f322b989d57d", function(err, results) {
                 if (!err) {
-                    results.forEach(item){
+                    results.forEach( function(item){
                         console.log(item);
-                    }
+                    });
                 }
             });
         });
