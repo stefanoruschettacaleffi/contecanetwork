@@ -152,4 +152,4 @@ function getAllContecasRelatedToConcentrator(concentrator, callback) {
 
 module.exports.connectToDB = connectToDB;
 module.exports.createMeasure = createMeasure;
-module.exports.getAllContecasRelatedTo = getAllContecasRelatedToConcentrator;
+module.exports.getAllContecasRelatedToConcentrator = getAllContecasRelatedToConcentrator;
