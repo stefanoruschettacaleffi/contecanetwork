@@ -88,10 +88,8 @@ function handleConnection(conn){
 
     //Data
     console.log("New client connection from: " + remoteAddress);
-
-    //5a9034a013d8f322b989d57d
-
-    contecaDB.getAllContecasRelatedToConcentrator("5a93ec71e10c414ff76bfe1a", function(err, results) {
+    
+    contecaDB.getAllContecasRelatedToConcentrator("5a93ece74b9d1e55076c3c32", function(err, results) {
         if (!err) {
             contecas = results;
             console.log(contecas);
