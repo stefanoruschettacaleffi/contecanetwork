@@ -142,7 +142,7 @@ function createDummyDB(){
 
 //TODO: Read objects
 
-function getAllContecasRelatedTo(concentrator, callback) {
+function getAllContecasRelatedToConcentrator(concentrator, callback) {
      Conteca.find({related_concentrator: ObjectId(concentrator)},  function(err, result){
          callback(err, result);
      });
@@ -152,4 +152,4 @@ function getAllContecasRelatedTo(concentrator, callback) {
 
 module.exports.connectToDB = connectToDB;
 module.exports.createMeasure = createMeasure;
-module.exports.getAllContecasRelatedTo = getAllContecasRelatedTo;
+module.exports.getAllContecasRelatedTo = getAllContecasRelatedToConcentrator;
