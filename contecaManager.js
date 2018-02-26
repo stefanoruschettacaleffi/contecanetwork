@@ -89,7 +89,7 @@ function handleConnection(conn){
     //Data
     console.log("New client connection from: " + remoteAddress);
 
-    contecaDB.getAllContecasRelatedToConcentrator("5a93ece74b9d1e55076c3c32", function(err, results) {
+    contecaDB.getAllContecasRelatedToConcentrator("5a94130c9fb42f74dc8272a7", function(err, results) {
         if (!err) {
             contecas = results;
             startInterrogationOf(contecas[currentContecaIndex]);
