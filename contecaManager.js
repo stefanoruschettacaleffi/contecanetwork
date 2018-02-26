@@ -91,7 +91,7 @@ function handleConnection(conn){
 
     //5a9034a013d8f322b989d57d
 
-    contecaDB.getAllContecasRelatedToConcentrator("5a9034a013d8f322b989d57d", function(err, results) {
+    contecaDB.getAllContecasRelatedToConcentrator("5a93ec71e10c414ff76bfe1a", function(err, results) {
         if (!err) {
             contecas = results;
             console.log(contecas);
@@ -107,7 +107,6 @@ function handleConnection(conn){
         mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
 
         conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
-
     }
 }
 

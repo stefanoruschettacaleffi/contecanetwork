@@ -126,7 +126,6 @@ function createDummyDB(){
             if(result == null){
                 var concentrator =  createConcentrator("Test concentrator");
                 createConteca("01", concentrator.id);
-                createConteca("02", concentrator.id);
             }
         }
     });
