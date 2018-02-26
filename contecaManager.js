@@ -22,13 +22,6 @@ module.exports = {
 
             console.log("server listening to: %j", server.address());
 
-            contecaDB.getAllContecasRelatedToConcentrator("5a9034a013d8f322b989d57d", function(err, results) {
-                if (!err) {
-                    results.forEach( function(item){
-                        console.log(item);
-                    });
-                }
-            });
         });
 
         //DB connection
@@ -49,6 +42,9 @@ function handleConnection(conn){
     conn.on("data", onConnData);
     conn.on("close", onConnClose);
     conn.on("err", onConnErr);
+
+    var contecas = null;
+    var currentContecaIndex = 0;
 
     function onConnData(data) {
 
@@ -71,7 +67,14 @@ function handleConnection(conn){
             else {
                 console.log("invalid response");
             }
-            conn.destroy();
+
+            if( currentContecaIndex === contecas.length - 1){
+                conn.destroy();
+            }
+            else {
+                currentContecaIndex ++;
+                startInterrogationOf(contecas[currentContecaIndex]);
+            }
         }
     }
 
@@ -88,10 +91,22 @@ function handleConnection(conn){
 
     //5a9034a013d8f322b989d57d
 
-    mbus.currentPrimaryAddress = "01";
-    mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
 
+
+    contecaDB.getAllContecasRelatedToConcentrator("5a9034a013d8f322b989d57d", function(err, results) {
+        if (!err) {
+            contecas = results;
+            startInterrogationOf(contecas[currentConteca]);
+        }
+    });
+}
+
+function startInterrogationOf(conteca) {
+
+    mbus.currentPrimaryAddress = conteca.primary_address;
+    mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
     conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
+
 }
 
 
