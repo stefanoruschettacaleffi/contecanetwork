@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66c48714-b3c4-4b80-8a8e-8acfde63d656" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/MBusFrame.js" afterPath="$PROJECT_DIR$/MBusFrame.js" />
-    </list>
+    <list default="true" id="66c48714-b3c4-4b80-8a8e-8acfde63d656" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -180,12 +178,12 @@
       <workItem from="1519286022836" duration="18013000" />
       <workItem from="1519376952102" duration="11429000" />
       <workItem from="1519632047018" duration="7888000" />
-      <workItem from="1519718886477" duration="4042000" />
+      <workItem from="1519718886477" duration="4119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43028000" />
+    <option name="totallyTimeSpent" value="43105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
