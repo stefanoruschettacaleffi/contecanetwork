@@ -384,6 +384,7 @@ MBusDataBlock.prototype.VIFAnalysis = function(){
         case "0000110":
         case "0000111":
           this.measure_unit = "Wh";
+          console.log("multiplier: " + hexvif);
           this.multiplier = Math.pow(10, parseInt(hexvif.substr(hexvif.length - 3, 3), 2) - 3);
 
           if(this.multiplier >= 1000){

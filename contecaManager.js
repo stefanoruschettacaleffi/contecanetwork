@@ -107,9 +107,6 @@ function handleConnection(conn){
     }
 }
 
-
-
-
 function saveMeasureOnDBFromData(data) {
     var frame = new MBusFrame(data);
 
