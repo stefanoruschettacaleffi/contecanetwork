@@ -154,12 +154,17 @@ function getContecaWithId(conteca_id, callback){
 
 function updateConcentratorWithId(concentrator_id, callback) {
     Concentrator.findOneAndUpdate({_id: concentrator_id}, function(err, result){
+
+
         callback(err, result);
     });
 }
 
 function updateContecaWithId(conteca_id, callback) {
     Conteca.findOneAndUpdate({_id: conteca_id}, function(err, result){
+
+        console.log("error: " + err);
+        console.log("result: " + result);
         callback(err, result);
     });
 }
