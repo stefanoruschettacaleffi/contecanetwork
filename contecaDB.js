@@ -141,8 +141,7 @@ function createDummyDB() {
 
 //TODO: Update objects
 
-//TODO: Read objects
-
+/*--- Read ---*/
 function getAllConcentrators(callback) {
     Concentrator.find(function (err, result) {
         callback(err, result);
@@ -161,6 +160,17 @@ function getAllContecasRelatedToConcentrator(concentrator, callback) {
      });
 }
 
+function getAllConteca(callback){
+    Conteca.find(function(err, result){
+       callback(err, result);
+    });
+}
+
+function getContecaWithId(contecaId, callback){
+    Conteca.find({_id:contecaId}, function(err, result){
+        callback(err, result);
+    })
+}
 
 //Export functions
 
@@ -170,11 +180,9 @@ module.exports.createMeasure = createMeasure;
 module.exports.createConteca = createConteca;
 module.exports.createConcentrator = createConcentrator;
 
-
+module.exports.getAllConteca = getAllConteca;
 module.exports.getAllConcentrators = getAllConcentrators;
 module.exports.getConcentratorWithId = getConcentratorWithId;
-
-
-
+module.exports.getContecaWithId = getContecaWithId;
 
 module.exports.getAllContecasRelatedToConcentrator = getAllContecasRelatedToConcentrator;

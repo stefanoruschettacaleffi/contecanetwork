@@ -26,7 +26,6 @@ router.get('/concentrators/:concentrator_id', function(req, res){
     });
 });
 
-
 router.get('/concentrators/:concentrator_id/conteca', function(req, res){
     dbManager.getAllContecasRelatedToConcentrator(req.params.concentrator_id, function(err, conteca) {
         if(!err){
@@ -35,7 +34,24 @@ router.get('/concentrators/:concentrator_id/conteca', function(req, res){
     });
 });
 
+/*--- Conteca ---*/
 
+router.get('/conteca', function(req, res){
+   dbManager.getAllConteca(function(err, conteca){
+       if(!err){
+           res.json(conteca);
+       }
+   });
+});
+
+
+router.get('/conteca/:conteca_id', function(req, res){
+   dbManager.getConcentratorWithId(req.params.conteca_id, function(err, result){
+       if(!err) {
+           res.json(result);
+       }
+   })
+});
 
 app.use('/api', router);
 
