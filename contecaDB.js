@@ -165,3 +165,4 @@ module.exports.createConteca = createConteca;
 module.exports.createConcentrator = createConcentrator;
 
 module.exports.getAllContecasRelatedToConcentrator = getAllContecasRelatedToConcentrator;
+module.exports.getAllConcentrators = getAllConcentrators;
