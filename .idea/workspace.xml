@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/contecaDB.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="398">
-              <caret line="180" column="67" lean-forward="false" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="67" />
+              <caret line="180" column="82" lean-forward="false" selection-start-line="180" selection-start-column="82" selection-end-line="180" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -153,12 +153,12 @@
       <workItem from="1519632047018" duration="7888000" />
       <workItem from="1519718886477" duration="7768000" />
       <workItem from="1519807428740" duration="1957000" />
-      <workItem from="1519889792621" duration="12083000" />
+      <workItem from="1519889792621" duration="12159000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60794000" />
+    <option name="totallyTimeSpent" value="60870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
@@ -444,7 +444,7 @@
     <entry file="file://$PROJECT_DIR$/contecaDB.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
-          <caret line="180" column="67" lean-forward="false" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="67" />
+          <caret line="180" column="82" lean-forward="false" selection-start-line="180" selection-start-column="82" selection-end-line="180" selection-end-column="82" />
           <folding />
         </state>
       </provider>
