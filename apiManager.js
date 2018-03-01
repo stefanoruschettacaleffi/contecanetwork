@@ -11,7 +11,7 @@ const router = express.Router();
 
 /*--- Concentrators ---*/
 
-router.get('/concentrators', function(req, res) {
+router.get('/concentrator', function(req, res) {
     dbManager.getAllConcentrators(function (err, concentrators) {
         if(!err){
             res.json(concentrators);
@@ -19,7 +19,7 @@ router.get('/concentrators', function(req, res) {
     });
 });
 
-router.get('/concentrators/:concentrator_id', function(req, res){
+router.get('/concentrator/:concentrator_id', function(req, res){
     dbManager.getConcentratorWithId(req.params.concentrator_id, function(err, concentrator) {
        if(!err){
            res.json(concentrator);
@@ -27,7 +27,7 @@ router.get('/concentrators/:concentrator_id', function(req, res){
     });
 });
 
-router.get('/concentrators/:concentrator_id/conteca', function(req, res){
+router.get('/concentrator/:concentrator_id/conteca', function(req, res){
     dbManager.getAllContecasRelatedToConcentrator(req.params.concentrator_id, function(err, conteca) {
         if(!err){
             res.json(conteca);
@@ -67,6 +67,18 @@ router.put('/conteca/:conteca_id', function(req, res){
    });
 });
 
+
+router.put('/concentrator/:concentrator_id', function(req, res){
+
+    dbManager.updateConcentratorWithId(req.params.concentrator_id, req.body.name, function(err, result){
+        if(!err){
+            res.json(result);
+        }
+        else{
+            console.log("error: " + err);
+        }
+    });
+});
 
 app.use('/api', router);
 

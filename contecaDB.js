@@ -154,7 +154,6 @@ function getContecaWithId(conteca_id, callback){
 
 function updateConcentratorWithId(concentrator_id, name, callback) {
     Concentrator.findOneAndUpdate({_id: concentrator_id}, {$set:{name: name}}, {new: true}, function(err, result){
-
         callback(err, result);
     });
 }
