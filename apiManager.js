@@ -51,17 +51,18 @@ router.get('/conteca/:conteca_id', function(req, res){
        if(!err) {
            res.json(result);
        }
-       else{
-           console.log("error: " + err);
-       }
    });
 });
 
 
 router.put('/conteca/:conteca_id', function(req, res){
+    console.log("putting");
    dbManager.updateContecaWithId(req.params.conteca_id, function(err, result){
        if(!err){
            res.json(result);
+       }
+       else{
+           console.log("error: " + err);
        }
    });
 });
