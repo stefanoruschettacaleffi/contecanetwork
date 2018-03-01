@@ -8,14 +8,28 @@ app.use(bodyParser.json());
 
 const router = express.Router();
 
+/*--- Concentrators ---*/
+
 router.get('/concentrators', function(req, res) {
-    //res.json({ message: 'hooray! welcome to our api!' });
     dbManager.getAllConcentrators(function (err, concentrators) {
         if(!err){
             res.json(concentrators);
         }
     });
 });
+
+router.get('/concentrators/:concentrator_id', function(req, res){
+    dbManager.getConcentratorWithId(req.params.concentrator_id, function(err, concentrator) {
+       if(!err){
+           res.json(concentrator);
+       }
+    });
+});
+
+
+
+
+
 
 app.use('/api', router);
 

@@ -149,6 +149,12 @@ function getAllConcentrators(callback) {
     })
 }
 
+function getConcentratorWithId(concentrator_id, callback){
+    Concentrator.find({_id: concentrator_id}, function (err, result){
+        callback(err, result);
+    });
+}
+
 function getAllContecasRelatedToConcentrator(concentrator, callback) {
      Conteca.find({related_concentrator: ObjectId(concentrator)},  function(err, result){
          callback(err, result);
@@ -164,5 +170,11 @@ module.exports.createMeasure = createMeasure;
 module.exports.createConteca = createConteca;
 module.exports.createConcentrator = createConcentrator;
 
-module.exports.getAllContecasRelatedToConcentrator = getAllContecasRelatedToConcentrator;
+
 module.exports.getAllConcentrators = getAllConcentrators;
+module.exports.getConcentratorWithId = getConcentratorWithId;
+
+
+
+
+module.exports.getAllContecasRelatedToConcentrator = getAllContecasRelatedToConcentrator;
