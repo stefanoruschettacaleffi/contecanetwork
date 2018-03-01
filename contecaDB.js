@@ -94,36 +94,22 @@ function createMeasure(energy, volume, power, volume_flow, flow_temperature, ret
 }
 
 
-function createConcentrator(name) {
+function createConcentrator(name, callback) {
     var concentrator = new Concentrator({name: name});
 
     concentrator.save(function(err, concentrator) {
-        if (err) {
-            console.log("error: " + err + "saving" + concentrator);
-        }
-        else {
-            console.log("Concentrator: " + concentrator + "correctly saved on DB.");
-        }
+        callback(err, concentrator);
     });
-
-    return concentrator;
 }
 
 
-function createConteca(primary_address, related_concentrator) {
+function createConteca(primary_address, related_concentrator, callback) {
     var conteca = new Conteca({ primary_address:primary_address,
                                 related_concentrator: related_concentrator});
 
     conteca.save(function(err, conteca) {
-        if (err) {
-            console.log("error: " + err + "saving" + conteca);
-        }
-        else {
-            console.log("Conteca: " + conteca + "correctly saved on DB.");
-        }
+       callback(err, conteca);
     });
-
-    return conteca;
 }
 
 

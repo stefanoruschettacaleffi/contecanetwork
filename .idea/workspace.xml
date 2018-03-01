@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="66c48714-b3c4-4b80-8a8e-8acfde63d656" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/apiManager.js" afterPath="$PROJECT_DIR$/apiManager.js" />
+      <change beforePath="$PROJECT_DIR$/contecaDB.js" afterPath="$PROJECT_DIR$/contecaDB.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,21 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="apiManager.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="apiManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apiManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="367">
+              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contecaDB.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="contecaDB.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contecaDB.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1052">
-              <caret line="60" column="11" lean-forward="true" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
+            <state relative-caret-position="513">
+              <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -61,8 +62,8 @@
         <option value="$PROJECT_DIR$/contecaManager.js" />
         <option value="$PROJECT_DIR$/MBusFrame.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/contecaDB.js" />
         <option value="$PROJECT_DIR$/apiManager.js" />
+        <option value="$PROJECT_DIR$/contecaDB.js" />
       </list>
     </option>
   </component>
@@ -153,12 +154,12 @@
       <workItem from="1519632047018" duration="7888000" />
       <workItem from="1519718886477" duration="7768000" />
       <workItem from="1519807428740" duration="1957000" />
-      <workItem from="1519889792621" duration="14150000" />
+      <workItem from="1519889792621" duration="14522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62861000" />
+    <option name="totallyTimeSpent" value="63233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
@@ -191,7 +192,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -433,18 +436,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contecaDB.js">
+    <entry file="file://$PROJECT_DIR$/apiManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1052">
-          <caret line="60" column="11" lean-forward="true" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
+        <state relative-caret-position="367">
+          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apiManager.js">
+    <entry file="file://$PROJECT_DIR$/contecaDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="513">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding />
         </state>
       </provider>

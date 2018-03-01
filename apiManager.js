@@ -19,7 +19,6 @@ router.post('/concentrator', function(req,res){
     });
 });
 
-
 router.get('/concentrator', function(req, res) {
     dbManager.getAllConcentrators(function (err, concentrators) {
         if(!err){
