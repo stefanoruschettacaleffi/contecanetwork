@@ -51,6 +51,9 @@ router.get('/conteca/:conteca_id', function(req, res){
        if(!err) {
            res.json(result);
        }
+       else{
+           console.log("error: " + err);
+       }
    });
 });
 
