@@ -11,6 +11,15 @@ const router = express.Router();
 
 /*--- Concentrators ---*/
 
+router.post('/concentrator', function(req,res){
+    dbManager.createConcentrator(req.body.name, function(err, concentrator){
+        if(!err){
+            res.json(concentrator);
+        }
+    });
+});
+
+
 router.get('/concentrator', function(req, res) {
     dbManager.getAllConcentrators(function (err, concentrators) {
         if(!err){
@@ -58,6 +67,15 @@ router.delete('concentrator/:concentrator_id', function(req, res){
 
 
 /*--- Conteca ---*/
+
+router.post('/conteca', function(req,res){
+   dbManager.createConteca(req.body.primary_address, req.body.related_concentrator, function(err, conteca){
+      if(!err){
+          res.json(conteca);
+      }
+   });
+});
+
 
 router.get('/conteca', function(req, res){
    dbManager.getAllConteca(function(err, conteca){
