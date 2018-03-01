@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66c48714-b3c4-4b80-8a8e-8acfde63d656" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/apiManager.js" afterPath="$PROJECT_DIR$/apiManager.js" />
-      <change beforePath="$PROJECT_DIR$/contecaDB.js" afterPath="$PROJECT_DIR$/contecaDB.js" />
-    </list>
+    <list default="true" id="66c48714-b3c4-4b80-8a8e-8acfde63d656" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -154,12 +151,12 @@
       <workItem from="1519632047018" duration="7888000" />
       <workItem from="1519718886477" duration="7768000" />
       <workItem from="1519807428740" duration="1957000" />
-      <workItem from="1519889792621" duration="5727000" />
+      <workItem from="1519889792621" duration="5767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54438000" />
+    <option name="totallyTimeSpent" value="54478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
