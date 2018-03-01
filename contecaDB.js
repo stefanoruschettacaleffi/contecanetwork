@@ -166,10 +166,10 @@ function getAllConteca(callback){
     });
 }
 
-function getContecaWithId(contecaId, callback){
-    Conteca.find({_id:contecaId}, function(err, result){
+function getContecaWithId(conteca_id, callback){
+    Conteca.find({_id:conteca_id}, function(err, result){
         callback(err, result);
-    })
+    });
 }
 
 //Export functions

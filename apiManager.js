@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 
 const router = express.Router();
 
+
 /*--- Concentrators ---*/
 
 router.get('/concentrators', function(req, res) {
@@ -46,11 +47,11 @@ router.get('/conteca', function(req, res){
 
 
 router.get('/conteca/:conteca_id', function(req, res){
-   dbManager.getConcentratorWithId(req.params.conteca_id, function(err, result){
+   dbManager.getContecaWithId(req.params.conteca_id, function(err, result){
        if(!err) {
            res.json(result);
        }
-   })
+   });
 });
 
 app.use('/api', router);
