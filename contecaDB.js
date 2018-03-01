@@ -151,7 +151,7 @@ function getAllConcentrators(callback) {
 
 function getConcentratorWithId(concentrator_id, callback){
     Concentrator.find({_id: concentrator_id}, function (err, result){
-        callback(err, result);
+        callback(err, result[0]);
     });
 }
 
