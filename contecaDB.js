@@ -152,19 +152,15 @@ function getContecaWithId(conteca_id, callback){
 
 /*--- Object Update ---*/
 
-function updateConcentratorWithId(concentrator_id, callback) {
-    Concentrator.findOneAndUpdate({_id: concentrator_id}, function(err, result){
-
+function updateConcentratorWithId(concentrator_id, name, callback) {
+    Concentrator.findOneAndUpdate({_id: concentrator_id}, {$set:{name: name}}, {new: true}, function(err, result){
 
         callback(err, result);
     });
 }
 
 function updateContecaWithId(conteca_id, primary_address, callback) {
-    console.log("received primaryaddress: " + primary_address);
     Conteca.findOneAndUpdate({_id: conteca_id}, {$set:{primary_address: primary_address}}, {new: true}, function(err, result){
-        console.log("error: " + err);
-        console.log("result: " + result);
         callback(err, result);
     });
 }
