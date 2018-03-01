@@ -144,11 +144,23 @@ function getAllConteca(callback){
 }
 
 function getContecaWithId(conteca_id, callback){
-    Conteca.find({_id:conteca_id}, function(err, result){
+    Conteca.find({_id: conteca_id}, function(err, result){
         callback(err, result);
     });
 }
 
+
+function getAllMeasures(callback){
+    Measure.find( function(err, result) {
+        callback(err, result);
+    });
+}
+
+function getMeasureWithId(measure_id, callback){
+    Measure.find( {_id: measure_id}, function(err, result){
+        callback(res, result)
+    });
+}
 
 /*--- Object Update ---*/
 
@@ -164,8 +176,9 @@ function updateContecaWithId(conteca_id, primary_address, callback) {
     });
 }
 
-function updateMeasureWithId(measure_id, callback) {
-    Measure.findOneAndUpdate({_id: measure_id}, function(err, result){
+function updateMeasureWithId(measure_id, params_array, callback) {
+
+    Measure.findOneAndUpdate({_id: measure_id}, {$set:{params_arry}}, function(err, result){
         callback(err, result);
     });
 }
@@ -216,8 +229,10 @@ module.exports.createConcentrator = createConcentrator;
 
 module.exports.getAllConteca = getAllConteca;
 module.exports.getAllConcentrators = getAllConcentrators;
+module.exports.getAllMeasures = getAllMeasures;
 module.exports.getConcentratorWithId = getConcentratorWithId;
 module.exports.getContecaWithId = getContecaWithId;
+module.exports.getMeasureWithId = getMeasureWithId;
 
 module.exports.updateConcentratorWithId = updateConcentratorWithId;
 module.exports.updateContecaWithId = updateContecaWithId;

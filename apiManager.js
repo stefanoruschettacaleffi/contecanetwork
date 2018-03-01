@@ -80,6 +80,53 @@ router.put('/concentrator/:concentrator_id', function(req, res){
     });
 });
 
+/*--- Measure ---*/
+
+router.get('/measure', function(req, res){
+   dbManager.getAllMeasures(function(err, measures){
+       if(!err) {
+           res.json(measures);
+       }
+   });
+});
+
+router.get('/measure/:measure_id', function(req, res){
+    dbManager.getMeasureWithId(req.params.measure_id, function(err, measure){
+        if(!err) {
+            res.json(measure);
+        }
+    });
+});
+
+router.put('/measure/:measure_id', function(req, res){
+
+    var params = {};
+
+    if(req.body.timestamp) params.timestamp = req.body.timestamp;
+    if(req.body.energy) params.energy = req.body.energy;
+    if(req.body.volume) params.volume = req.body.volume;
+    if(req.body.power) params.power = req.body.power;
+    if(req.body.volume_flow) params.volume_flow = req.body.volume_flow;
+    if(req.body.flow_temperature) params.flow_temperature = req.body.flow_temperature;
+    if(req.body.volume_1) params.volume_1 = req.body.volume_1;
+    if(req.body.volume_2) params.volume_2 = req.body.volume_2;
+    if(req.body.volume_3) params.volume_3 = req.body.volume_3;
+    if(req.body.volume_4) params.volume_4 = req.body.volume_4;
+    if(req.body.energy_1) params.energy_1 = req.body.energy_1;
+    if(req.body.related_conteca) params.related_conteca = req.body.related_conteca;
+
+    dbManager.updateMeasureWithId( req.params.measure_id, params, function(err, result){
+        if(!err){
+            res.json(result);
+        }
+        else{
+            console.log("error: " + err);
+        }
+    });
+});
+
+
+
 app.use('/api', router);
 
 function startAPIService(port) {
