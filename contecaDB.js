@@ -55,12 +55,12 @@ concentratorSchema.pre('remove', function(next) {
     Conteca.remove({related_concentrator: this._id}).exec();
     next();
 });
-
+/*
 contecaSchema.pre('remove', function(next) {
     Measure.remove({related_conteca: this._id}).exec();
     next();
 });
-
+*/
 
 //Object creation
 
@@ -182,10 +182,8 @@ function updateMeasureWithId(measure_id, params_array, callback) {
 
 /*--- Object Deletion ---*/
 
-
 function deleteConcentratorWithId(concentrator_id, callback) {
     Concentrator.findOneAndRemove({_id: concentrator_id}, function(err, result){
-
         callback(err, result);
     });
 }
