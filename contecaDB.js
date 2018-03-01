@@ -99,6 +99,7 @@ function createConcentrator(name) {
     return concentrator;
 }
 
+
 function createConteca(primary_address, related_concentrator) {
     var conteca = new Conteca({ primary_address:primary_address,
                                 related_concentrator: related_concentrator});
@@ -116,32 +117,8 @@ function createConteca(primary_address, related_concentrator) {
 }
 
 
-
-function createDummyDB() {
-    //Find concentrators
-    Concentrator.findOne(function(err, result){
-        if (!err) {
-            if(result == null){
-                var concentrator =  createConcentrator("Test concentrator");
-                createConteca("01", concentrator.id);
-                createConteca("02", concentrator.id);
-                createConteca("03", concentrator.id);
-                createConteca("05", concentrator.id);
-                createConteca("06", concentrator.id);
-            }
-        }
-    });
-
-    //if not concentrator
-    //create dummy concentrator with two conteca
-}
-
-
-//TODO: Delete objects
-
-//TODO: Update objects
-
 /*--- Read ---*/
+
 function getAllConcentrators(callback) {
     Concentrator.find(function (err, result) {
         callback(err, result);
@@ -172,6 +149,63 @@ function getContecaWithId(conteca_id, callback){
     });
 }
 
+
+/*--- Object Update ---*/
+
+function updateConcentratorWithId(concentrator_id, callback) {
+    Concentrator.findOneAndUpdate({_id: concentrator_id}, function(err, result){
+        callback(err, result);
+    });
+}
+
+function updateContecaWithId(conteca_id, callback) {
+    Conteca.findOneAndUpdate({_id: conteca_id}, function(err, result){
+        callback(err, result);
+    });
+}
+
+function updateMeasureWithId(measure_id, callback) {
+    Measure.findOneAndUpdate({_id: measure_id}, function(err, result){
+        callback(err, result);
+    });
+}
+
+
+/*--- Object Deletion ---*/
+
+
+function deleteConcentratorWithId(concentrator_id, callback) {
+
+}
+
+function deleteContecaWithId(conteca_id, callback) {
+
+}
+
+function deleteMeasureWithId(measure_id, callback) {
+
+}
+
+
+/*--- Dummy ---*/
+
+function createDummyDB() {
+    //Find concentrators
+    Concentrator.findOne(function(err, result){
+        if (!err) {
+            if(result == null){
+                var concentrator =  createConcentrator("Test concentrator");
+                createConteca("01", concentrator.id);
+                createConteca("02", concentrator.id);
+                createConteca("03", concentrator.id);
+                createConteca("05", concentrator.id);
+                createConteca("06", concentrator.id);
+            }
+        }
+    });
+}
+
+
 //Export functions
 
 module.exports.connectToDB = connectToDB;
@@ -184,5 +218,13 @@ module.exports.getAllConteca = getAllConteca;
 module.exports.getAllConcentrators = getAllConcentrators;
 module.exports.getConcentratorWithId = getConcentratorWithId;
 module.exports.getContecaWithId = getContecaWithId;
+
+module.exports.updateConcentratorWithId = updateConcentratorWithId;
+module.exports.updateContecaWithId = updateContecaWithId;
+module.exports.updateMeasureWithId = updateMeasureWithId;
+
+module.exports.deleteConcentratorWithId = deleteConcentratorWithId;
+module.exports.deleteContecaWithId = deleteContecaWithId;
+module.exports.deleteMeasureWithId = deleteMeasureWithId;
 
 module.exports.getAllContecasRelatedToConcentrator = getAllContecasRelatedToConcentrator;

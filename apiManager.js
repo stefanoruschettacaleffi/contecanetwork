@@ -54,6 +54,16 @@ router.get('/conteca/:conteca_id', function(req, res){
    });
 });
 
+
+router.put('/conteca/:conteca_id', function(req, res){
+   dbManager.updateContecaWithId(req.params.conteca_id, function(err, result){
+       if(!err){
+           res.json(result);
+       }
+   });
+});
+
+
 app.use('/api', router);
 
 function startAPIService(port) {
