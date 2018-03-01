@@ -15,8 +15,7 @@ function connectToDB() {
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function() {
-        console.log("connection to DB successfull");
-
+        console.log("connection to DB successful");
         createDummyDB();
     });
 }
@@ -53,7 +52,7 @@ var Conteca = mongoose.model("Conteca", contecaSchema);
 var Concentrator = mongoose.model("Concentrator", concentratorSchema);
 
 
-//TODO: Create objects
+//Object creation
 
 function createMeasure(energy, volume, power, volume_flow, flow_temperature, return_temperature,
                        volume_1, volume_2, volume_3, volume_4, energy_1, related_conteca){
@@ -72,7 +71,7 @@ function createMeasure(energy, volume, power, volume_flow, flow_temperature, ret
                                 energy_1: energy_1,
                                 related_conteca: related_conteca});
 
-    measure.save(function(err, measure){
+    measure.save(function(err, measure) {
         if(err) {
             console.log("error: " + err + "saving" + measure);
         }
@@ -118,11 +117,10 @@ function createConteca(primary_address, related_concentrator) {
 
 
 
-function createDummyDB(){
+function createDummyDB() {
     //Find concentrators
     Concentrator.findOne(function(err, result){
         if (!err) {
-
             if(result == null){
                 var concentrator =  createConcentrator("Test concentrator");
                 createConteca("01", concentrator.id);
@@ -135,7 +133,7 @@ function createDummyDB(){
     });
 
     //if not concentrator
-    //create dummy concentrator wit two conteca
+    //create dummy concentrator with two conteca
 }
 
 
@@ -145,14 +143,25 @@ function createDummyDB(){
 
 //TODO: Read objects
 
+function getAllConcentrators(callback) {
+    Concentrator.find(function (err, result) {
+        callback(err, result);
+    })
+}
+
 function getAllContecasRelatedToConcentrator(concentrator, callback) {
      Conteca.find({related_concentrator: ObjectId(concentrator)},  function(err, result){
          callback(err, result);
      });
 }
 
+
 //Export functions
 
 module.exports.connectToDB = connectToDB;
+
 module.exports.createMeasure = createMeasure;
+module.exports.createConteca = createConteca;
+module.exports.createConcentrator = createConcentrator;
+
 module.exports.getAllContecasRelatedToConcentrator = getAllContecasRelatedToConcentrator;

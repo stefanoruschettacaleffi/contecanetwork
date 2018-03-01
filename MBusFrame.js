@@ -691,6 +691,3 @@ MBusDataBlock.prototype.VIFAnalysis = function(){
             break;
     }
 };
-
-//Config caleffi: 6808086853FF51017C0150007116
-//Config BCD: 6808086853FF51017C0150017216
