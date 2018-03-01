@@ -162,7 +162,7 @@ function updateConcentratorWithId(concentrator_id, callback) {
 
 function updateContecaWithId(conteca_id, primary_address, callback) {
     console.log("received primaryaddress: " + primary_address);
-    Conteca.findOneAndUpdate({_id: conteca_id}, {$set:{primary_address:primary_address}}, function(err, result){
+    Conteca.findOneAndUpdate({_id: conteca_id}, {$set:{primary_address: primary_address}}, {new: true}, function(err, result){
         console.log("error: " + err);
         console.log("result: " + result);
         callback(err, result);
