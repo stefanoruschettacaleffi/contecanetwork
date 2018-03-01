@@ -158,7 +158,7 @@ function getAllMeasures(callback){
 
 function getMeasureWithId(measure_id, callback){
     Measure.find( {_id: measure_id}, function(err, result){
-        callback(res, result)
+        callback(err, result)
     });
 }
 
