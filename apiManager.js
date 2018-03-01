@@ -56,8 +56,8 @@ router.get('/conteca/:conteca_id', function(req, res){
 
 
 router.put('/conteca/:conteca_id', function(req, res){
-    console.log("putting");
-   dbManager.updateContecaWithId(req.params.conteca_id, function(err, result){
+
+   dbManager.updateContecaWithId(req.params.conteca_id, req.body.primary_address, function(err, result){
        if(!err){
            res.json(result);
        }
