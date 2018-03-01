@@ -27,6 +27,16 @@ router.get('/concentrators/:concentrator_id', function(req, res){
 });
 
 
+router.get('/concentrators/:concentrator_id/conteca', function(req, res){
+    dbManager.getAllContecasRelatedToConcentrator(req.params.concentrator_id, function(err, conteca) {
+        if(!err){
+            res.json(conteca);
+        }
+    });
+});
+
+
+
 app.use('/api', router);
 
 function startAPIService(port) {
