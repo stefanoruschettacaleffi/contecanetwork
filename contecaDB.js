@@ -188,15 +188,21 @@ function updateMeasureWithId(measure_id, params_array, callback) {
 
 
 function deleteConcentratorWithId(concentrator_id, callback) {
-
+    Concentrator.findOneAndRemove({_id: concentrator_id}, function(err, result){
+        callback(err, result);
+    });
 }
 
 function deleteContecaWithId(conteca_id, callback) {
-
+    Conteca.findOneAndRemove({_id: conteca_id}, function(err, result){
+        callback(err, result);
+    });
 }
 
 function deleteMeasureWithId(measure_id, callback) {
-
+    Measure.findOneAndRemove({_id: measure_id}, function(err, result){
+        callback(err, result);
+    });
 }
 
 

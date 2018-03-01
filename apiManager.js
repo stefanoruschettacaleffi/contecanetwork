@@ -35,6 +35,28 @@ router.get('/concentrator/:concentrator_id/conteca', function(req, res){
     });
 });
 
+router.put('/concentrator/:concentrator_id', function(req, res){
+
+    dbManager.updateConcentratorWithId(req.params.concentrator_id, req.body.name, function(err, result){
+        if(!err){
+            res.json(result);
+        }
+        else{
+            console.log("error: " + err);
+        }
+    });
+});
+
+router.delete('concentrator/:concentrator_id', function(req, res){
+    dbManager.deleteConcentratorWithId(req.params.concentrator_id, function(err, result){
+        if(!err){
+            res.json(result);
+        }
+    });
+});
+
+
+
 /*--- Conteca ---*/
 
 router.get('/conteca', function(req, res){
@@ -45,7 +67,6 @@ router.get('/conteca', function(req, res){
    });
 });
 
-
 router.get('/conteca/:conteca_id', function(req, res){
    dbManager.getContecaWithId(req.params.conteca_id, function(err, result){
        if(!err) {
@@ -53,7 +74,6 @@ router.get('/conteca/:conteca_id', function(req, res){
        }
    });
 });
-
 
 router.put('/conteca/:conteca_id', function(req, res){
 
@@ -67,18 +87,15 @@ router.put('/conteca/:conteca_id', function(req, res){
    });
 });
 
-
-router.put('/concentrator/:concentrator_id', function(req, res){
-
-    dbManager.updateConcentratorWithId(req.params.concentrator_id, req.body.name, function(err, result){
+router.delete('conteca/:conteca_id', function(req, res){
+    dbManager.deleteContecaWithId(req.params.conteca_id, function(err, result){
         if(!err){
             res.json(result);
         }
-        else{
-            console.log("error: " + err);
-        }
     });
 });
+
+
 
 /*--- Measure ---*/
 
@@ -119,12 +136,17 @@ router.put('/measure/:measure_id', function(req, res){
         if(!err){
             res.json(result);
         }
-        else{
-            console.log("error: " + err);
-        }
     });
 });
 
+
+router.delete('/measure/:measure_id', function(req, res) {
+    dbManager.deleteMeasureWithId(req.params.measure_id, function(err, result){
+        if(!err){
+            res.json(result);
+        }
+    });
+});
 
 
 app.use('/api', router);
