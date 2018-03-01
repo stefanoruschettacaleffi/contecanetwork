@@ -148,7 +148,6 @@ router.delete('/measure/:measure_id', function(req, res) {
     });
 });
 
-
 app.use('/api', router);
 
 function startAPIService(port) {
