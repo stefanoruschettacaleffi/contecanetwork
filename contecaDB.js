@@ -161,6 +161,7 @@ function updateConcentratorWithId(concentrator_id, callback) {
 }
 
 function updateContecaWithId(conteca_id, callback) {
+    console.log("HERE");
     Conteca.findOneAndUpdate({_id: conteca_id}, function(err, result){
 
         console.log("error: " + err);
