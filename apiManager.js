@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 const router = express.Router();
 
-router.get('/', function(req, res) {
+router.get('/api', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
 });
 
