@@ -178,7 +178,7 @@ function updateContecaWithId(conteca_id, primary_address, callback) {
 
 function updateMeasureWithId(measure_id, params_array, callback) {
 
-    Measure.findOneAndUpdate({_id: measure_id}, {$set:{params_arry}}, function(err, result){
+    Measure.findOneAndUpdate({_id: measure_id}, {$set:{params_array}}, function(err, result){
         callback(err, result);
     });
 }
