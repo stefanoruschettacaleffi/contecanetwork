@@ -125,7 +125,6 @@ function getAllConcentrators(callback) {
 
 function getConcentratorWithId(concentrator_id, callback){
     Concentrator.find({_id: concentrator_id}, function (err, result){
-        console.log("jesus");
         callback(err, result[0]);
     });
 }
@@ -147,7 +146,6 @@ function getContecaWithId(conteca_id, callback){
         callback(err, result);
     });
 }
-
 
 function getAllMeasures(callback){
     Measure.find( function(err, result) {
@@ -186,9 +184,7 @@ function updateMeasureWithId(measure_id, params_array, callback) {
 /*--- Object Deletion ---*/
 
 function deleteConcentratorWithId(concentrator_id, callback) {
-    console.log("outside");
     Concentrator.findOneAndRemove({_id: concentrator_id}, function(err, result){
-        console.log("inside");
         callback(err, result);
     });
 }
