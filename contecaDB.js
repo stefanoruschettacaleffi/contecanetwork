@@ -87,9 +87,9 @@ function createMeasure(energy, volume, power, volume_flow, flow_temperature, ret
         if(err) {
             console.log("error: " + err + "saving" + measure);
         }
-        else {
-            console.log("Measure: " + measure + "correctly saved on DB.");
-        }
+        //else {
+           // console.log("Measure: " + measure + "correctly saved on DB.");
+        //}
     });
 
     return measure;
