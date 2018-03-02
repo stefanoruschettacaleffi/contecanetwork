@@ -80,7 +80,7 @@ function handleConnection(conn){
     }
 
     function onConnClose(){
-        console.log("Connection close");
+        console.log("Connection close " + Date.now() );
     }
 
     function onConnErr(err) {
@@ -88,7 +88,7 @@ function handleConnection(conn){
     }
 
     //Data
-    console.log("New client connection from: " + remoteAddress);
+    console.log("New client connection from: " + remoteAddress + " on: " + Date.now());
 
     contecaDB.getAllContecasRelatedToConcentrator("5a94130c9fb42f74dc8272a7", function(err, results) {
         if (!err) {
