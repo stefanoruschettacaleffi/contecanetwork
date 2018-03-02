@@ -93,9 +93,11 @@ function handleConnection(conn){
         if (!err) {
             contecas = results;
             for(var i = 0; i < 50; i++) {
-                contecas.concat(contecas);
-                console.log("All Contecas: " + contecas);
+                contecas = contecas.concat(contecas);
             }
+
+            console.log("All Contecas: " + contecas);
+
             startInterrogationOf(contecas[currentContecaIndex]);
         }
     });
