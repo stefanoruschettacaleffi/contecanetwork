@@ -19,8 +19,8 @@
       <file leaf-file-name="apiManager.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apiManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1287">
-              <caret line="107" column="16" lean-forward="false" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
+            <state relative-caret-position="-199">
+              <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -29,7 +29,7 @@
       <file leaf-file-name="contecaDB.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contecaDB.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="2034">
               <caret line="192" column="7" lean-forward="true" selection-start-line="192" selection-start-column="7" selection-end-line="192" selection-end-column="7" />
               <folding>
                 <element signature="e#3889#3926#0" expanded="false" />
@@ -157,12 +157,12 @@
       <workItem from="1519807428740" duration="1957000" />
       <workItem from="1519889792621" duration="14739000" />
       <workItem from="1519921410221" duration="340000" />
-      <workItem from="1519976247632" duration="558000" />
+      <workItem from="1519976247632" duration="1414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64348000" />
+    <option name="totallyTimeSpent" value="65204000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
@@ -461,7 +461,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contecaDB.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
+        <state relative-caret-position="2034">
           <caret line="192" column="7" lean-forward="true" selection-start-line="192" selection-start-column="7" selection-end-line="192" selection-end-column="7" />
           <folding>
             <element signature="e#3889#3926#0" expanded="false" />
@@ -471,8 +471,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apiManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1287">
-          <caret line="107" column="16" lean-forward="false" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
+        <state relative-caret-position="-199">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
           <folding />
         </state>
       </provider>

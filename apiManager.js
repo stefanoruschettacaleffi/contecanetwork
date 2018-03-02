@@ -43,6 +43,7 @@ router.get('/concentrator/:concentrator_id/conteca', function(req, res){
     });
 });
 
+
 router.put('/concentrator/:concentrator_id', function(req, res){
 
     dbManager.updateConcentratorWithId(req.params.concentrator_id, req.body.name, function(err, result){
@@ -54,6 +55,16 @@ router.put('/concentrator/:concentrator_id', function(req, res){
         }
     });
 });
+
+router.post('/concentrator/:concentrator_id/conteca', function(req, res){
+
+    dbManager.createConteca(req.body.primary_address, req.params.concentrator_id, function(err, conteca) {
+        if(!err){
+            res.json(conteca);
+        }
+    });
+});
+
 
 router.delete('/concentrator/:concentrator_id', function(req, res){
     dbManager.deleteConcentratorWithId(req.params.concentrator_id, function(err, result){
