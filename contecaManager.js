@@ -92,6 +92,10 @@ function handleConnection(conn){
     contecaDB.getAllContecasRelatedToConcentrator("5a94130c9fb42f74dc8272a7", function(err, results) {
         if (!err) {
             contecas = results;
+            for(var i = 0; i < 50; i++) {
+                contecas.concat(contecas);
+                console.log("All Contecas: " + contecas);
+            }
             startInterrogationOf(contecas[currentContecaIndex]);
         }
     });
