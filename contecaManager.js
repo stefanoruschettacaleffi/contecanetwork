@@ -80,7 +80,7 @@ function handleConnection(conn){
     }
 
     function onConnClose(){
-        console.log("Connection close " + Date.now() );
+        console.log("Connection close " + Math.round(new Date().getTime()/1000.0) );
     }
 
     function onConnErr(err) {
@@ -88,7 +88,7 @@ function handleConnection(conn){
     }
 
     //Data
-    console.log("New client connection from: " + remoteAddress + " on: " + Date.now());
+    console.log("New client connection from: " + remoteAddress + " on: " + Math.round(new Date().getTime()/1000.0));
 
     contecaDB.getAllContecasRelatedToConcentrator("5a94130c9fb42f74dc8272a7", function(err, results) {
         if (!err) {
@@ -106,7 +106,7 @@ function handleConnection(conn){
 
         mbus.currentPrimaryAddress = conteca.primary_address;
 
-        console.log(conteca);
+        //console.log(conteca);
         mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
 
         conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
