@@ -57,12 +57,12 @@ concentratorSchema.pre('remove', function(next) {
     next();
 });
 
-/*
 contecaSchema.pre('remove', function(next) {
     Measure.remove({related_conteca: this._id}).exec();
     next();
 });
-*/
+
+
 
 //Object creation
 
