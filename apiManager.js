@@ -55,7 +55,7 @@ router.put('/concentrator/:concentrator_id', function(req, res){
     });
 });
 
-router.delete('concentrator/:concentrator_id', function(req, res){
+router.delete('/concentrator/:concentrator_id', function(req, res){
     dbManager.deleteConcentratorWithId(req.params.concentrator_id, function(err, result){
         console.log(err);
         if(!err){
@@ -105,7 +105,7 @@ router.put('/conteca/:conteca_id', function(req, res){
    });
 });
 
-router.delete('conteca/:conteca_id', function(req, res){
+router.delete('/conteca/:conteca_id', function(req, res){
     dbManager.deleteContecaWithId(req.params.conteca_id, function(err, result){
         if(!err){
             res.json(result);
