@@ -186,7 +186,9 @@ function updateMeasureWithId(measure_id, params_array, callback) {
 /*--- Object Deletion ---*/
 
 function deleteConcentratorWithId(concentrator_id, callback) {
+    console.log("outside");
     Concentrator.findOneAndRemove({_id: concentrator_id}, function(err, result){
+        console.log("inside");
         callback(err, result);
     });
 }
