@@ -11,6 +11,7 @@ const router = express.Router();
 
 /*--- Concentrators ---*/
 
+//Concentrator creation
 router.post('/concentrator', function(req,res){
     dbManager.createConcentrator(req.body.name, function(err, concentrator){
         if(!err){
@@ -19,6 +20,7 @@ router.post('/concentrator', function(req,res){
     });
 });
 
+//Concentrators list
 router.get('/concentrator', function(req, res) {
     dbManager.getAllConcentrators(function (err, concentrators) {
         if(!err){
@@ -27,6 +29,7 @@ router.get('/concentrator', function(req, res) {
     });
 });
 
+//Concentrator detail
 router.get('/concentrator/:concentrator_id', function(req, res){
     dbManager.getConcentratorWithId(req.params.concentrator_id, function(err, concentrator) {
        if(!err){
@@ -35,6 +38,7 @@ router.get('/concentrator/:concentrator_id', function(req, res){
     });
 });
 
+//Conteca list related to a Concentrator
 router.get('/concentrator/:concentrator_id/conteca', function(req, res){
     dbManager.getAllContecasRelatedToConcentrator(req.params.concentrator_id, function(err, conteca) {
         if(!err){
@@ -43,9 +47,8 @@ router.get('/concentrator/:concentrator_id/conteca', function(req, res){
     });
 });
 
-
+//Concentrator update
 router.put('/concentrator/:concentrator_id', function(req, res){
-
     dbManager.updateConcentratorWithId(req.params.concentrator_id, req.body.name, function(err, result){
         if(!err){
             res.json(result);
@@ -56,8 +59,8 @@ router.put('/concentrator/:concentrator_id', function(req, res){
     });
 });
 
+//Create a new Conteca related to a Concentrator
 router.post('/concentrator/:concentrator_id/conteca', function(req, res){
-
     dbManager.createConteca(req.body.primary_address, req.params.concentrator_id, function(err, conteca) {
         if(!err){
             res.json(conteca);
@@ -66,6 +69,7 @@ router.post('/concentrator/:concentrator_id/conteca', function(req, res){
 });
 
 
+//Concentrator delete
 router.delete('/concentrator/:concentrator_id', function(req, res){
     dbManager.deleteConcentratorWithId(req.params.concentrator_id, function(err, result){
         console.log(err);
@@ -79,6 +83,8 @@ router.delete('/concentrator/:concentrator_id', function(req, res){
 
 /*--- Conteca ---*/
 
+
+//Conteca creation
 router.post('/conteca', function(req,res){
    dbManager.createConteca(req.body.primary_address, req.body.related_concentrator, function(err, conteca){
       if(!err){
@@ -87,7 +93,7 @@ router.post('/conteca', function(req,res){
    });
 });
 
-
+//Conteca list
 router.get('/conteca', function(req, res){
    dbManager.getAllConteca(function(err, conteca){
        if(!err){
@@ -96,6 +102,7 @@ router.get('/conteca', function(req, res){
    });
 });
 
+//Conteca details
 router.get('/conteca/:conteca_id', function(req, res){
    dbManager.getContecaWithId(req.params.conteca_id, function(err, result){
        if(!err) {
@@ -104,8 +111,8 @@ router.get('/conteca/:conteca_id', function(req, res){
    });
 });
 
+//Conteca Update
 router.put('/conteca/:conteca_id', function(req, res){
-
    dbManager.updateContecaWithId(req.params.conteca_id, req.body.primary_address, function(err, result){
        if(!err){
            res.json(result);
@@ -116,6 +123,8 @@ router.put('/conteca/:conteca_id', function(req, res){
    });
 });
 
+
+//Conteca deletion
 router.delete('/conteca/:conteca_id', function(req, res){
     dbManager.deleteContecaWithId(req.params.conteca_id, function(err, result){
         if(!err){
@@ -128,6 +137,7 @@ router.delete('/conteca/:conteca_id', function(req, res){
 
 /*--- Measure ---*/
 
+//Measures list
 router.get('/measure', function(req, res){
    dbManager.getAllMeasures(function(err, measures){
        if(!err) {
@@ -136,6 +146,7 @@ router.get('/measure', function(req, res){
    });
 });
 
+//Measure details
 router.get('/measure/:measure_id', function(req, res){
     dbManager.getMeasureWithId(req.params.measure_id, function(err, measure){
         if(!err) {
@@ -144,6 +155,8 @@ router.get('/measure/:measure_id', function(req, res){
     });
 });
 
+
+//Measure update
 router.put('/measure/:measure_id', function(req, res){
 
     var params = {};
@@ -168,7 +181,7 @@ router.put('/measure/:measure_id', function(req, res){
     });
 });
 
-
+//Measure deletion
 router.delete('/measure/:measure_id', function(req, res) {
     dbManager.deleteMeasureWithId(req.params.measure_id, function(err, result){
         if(!err){
@@ -176,6 +189,7 @@ router.delete('/measure/:measure_id', function(req, res) {
         }
     });
 });
+
 
 app.use('/api', router);
 
