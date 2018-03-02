@@ -92,10 +92,11 @@ function handleConnection(conn){
     contecaDB.getAllContecasRelatedToConcentrator("5a94130c9fb42f74dc8272a7", function(err, results) {
         if (!err) {
             contecas = results;
+            var final = contecas;
             for(var i = 0; i < 50; i++) {
-                //contecas = contecas.concat(contecas);
+                final = final.concat(contecas);
             }
-
+            contecas = final;
             console.log("All Contecas: " + contecas);
 
             startInterrogationOf(contecas[currentContecaIndex]);
