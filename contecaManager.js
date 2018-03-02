@@ -97,7 +97,7 @@ function handleConnection(conn){
                 final = final.concat(contecas);
             }
             contecas = final;
-            console.log("All Contecas: " + contecas);
+            console.log("All Contecas: " + contecas.length);
 
             startInterrogationOf(contecas[currentContecaIndex]);
         }
