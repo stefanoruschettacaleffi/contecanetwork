@@ -57,6 +57,7 @@ router.put('/concentrator/:concentrator_id', function(req, res){
 
 router.delete('concentrator/:concentrator_id', function(req, res){
     dbManager.deleteConcentratorWithId(req.params.concentrator_id, function(err, result){
+        console.log(err);
         if(!err){
             res.json(result);
         }
