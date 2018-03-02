@@ -73,6 +73,7 @@ function handleConnection(conn){
             }
             else {
                 currentContecaIndex ++;
+                console.log("Reading: " + currentContecaIndex);
                 startInterrogationOf(contecas[currentContecaIndex]);
             }
         }
