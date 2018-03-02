@@ -68,8 +68,7 @@ router.post('/concentrator/:concentrator_id/conteca', function(req, res){
     });
 });
 
-
-//Concentrator delete
+//Concentrator deletion
 router.delete('/concentrator/:concentrator_id', function(req, res){
     dbManager.deleteConcentratorWithId(req.params.concentrator_id, function(err, result){
         console.log(err);
@@ -78,7 +77,6 @@ router.delete('/concentrator/:concentrator_id', function(req, res){
         }
     });
 });
-
 
 
 /*--- Conteca ---*/
@@ -111,7 +109,7 @@ router.get('/conteca/:conteca_id', function(req, res){
    });
 });
 
-//Conteca Update
+//Conteca update
 router.put('/conteca/:conteca_id', function(req, res){
    dbManager.updateContecaWithId(req.params.conteca_id, req.body.primary_address, function(err, result){
        if(!err){
