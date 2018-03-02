@@ -49,8 +49,8 @@
       <file leaf-file-name="contecaManager.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/contecaManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+            <state relative-caret-position="325">
+              <caret line="90" column="99" lean-forward="false" selection-start-line="90" selection-start-column="99" selection-end-line="90" selection-end-column="99" />
               <folding />
             </state>
           </provider>
@@ -197,12 +197,12 @@
       <workItem from="1519807428740" duration="1957000" />
       <workItem from="1519889792621" duration="14739000" />
       <workItem from="1519921410221" duration="340000" />
-      <workItem from="1519976247632" duration="8991000" />
+      <workItem from="1519976247632" duration="9239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72781000" />
+    <option name="totallyTimeSpent" value="73029000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="803" extended-state="0" />
@@ -501,8 +501,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/contecaManager.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+        <state relative-caret-position="325">
+          <caret line="90" column="99" lean-forward="false" selection-start-line="90" selection-start-column="99" selection-end-line="90" selection-end-column="99" />
           <folding />
         </state>
       </provider>
