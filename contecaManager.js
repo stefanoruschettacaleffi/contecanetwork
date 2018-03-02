@@ -50,16 +50,16 @@ function handleConnection(conn){
 
         if (mbus.MBusStatus === mbus.MBusStatusEnum.waitingForAck && data === "e5") {
 
-            console.log("Ack received for: " + mbus.currentPrimaryAddress);
-            console.log("Sending data request to: " + mbus.currentPrimaryAddress);
+            //console.log("Ack received for: " + mbus.currentPrimaryAddress);
+            //console.log("Sending data request to: " + mbus.currentPrimaryAddress);
 
             mbus.MBusStatus = mbus.MBusStatusEnum.waitingForData;
 
             conn.write(mbus.dataForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
         }
         else if (mbus.MBusStatus === mbus.MBusStatusEnum.waitingForData) {
-            console.log("Data received for: " + mbus.currentPrimaryAddress);
-            console.log("Data: " + data);
+            //console.log("Data received for: " + mbus.currentPrimaryAddress);
+            //console.log("Data: " + data);
 
             if (mbus.checkResponseValidity(data)) {
                 saveMeasureOnDBFromData(data);
@@ -115,7 +115,7 @@ function handleConnection(conn){
 function saveMeasureOnDBFromData(data) {
     var frame = new MBusFrame(data);
 
-    console.log(frame);
+    //console.log(frame);
 
     var energy = (frame.dataBlocks[2]).data;
     var volume = (frame.dataBlocks[3]).data;
