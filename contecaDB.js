@@ -127,7 +127,8 @@ function createConteca(primary_address, related_concentrator, callback) {
 /*--- Read ---*/
 
 function getAllConcentrators(callback) {
-    Concentrator.find(function (err, result) {
+  
+    Concentrator.find({}, 'name serial address city', function (err, result) {
         callback(err, result);
     })
 }
