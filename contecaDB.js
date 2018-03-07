@@ -39,12 +39,21 @@ var measureSchema = mongoose.Schema({
 });
 
 var contecaSchema = mongoose.Schema({
+    serial: String,
     primary_address: String,
+    secondary_address: String,
     related_concentrator: { type: Schema.Types.ObjectId, ref: 'Concentrator' }
 });
 
 var concentratorSchema = mongoose.Schema({
-    name: String
+    name: String,
+    serial: String,
+    address: String,
+    city: String,
+    zip: String,
+    phone: String,
+    sim_apn: String,
+    sim_iccid: String
 });
 
 var Measure = mongoose.model("Measure", measureSchema);
