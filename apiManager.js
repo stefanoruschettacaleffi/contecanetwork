@@ -8,11 +8,30 @@ app.use(bodyParser.json());
 
 const router = express.Router();
 
+app.use(function (req, res, next) {
+
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    next();
+});
+
 
 /*--- Concentrators ---*/
 
 //Concentrator creation
-router.post('/concentrator', function(req,res){
+router.post('/concentrator', function(req, res){
     dbManager.createConcentrator(req.body.name, function(err, concentrator){
         if(!err){
             res.json(concentrator);
@@ -81,9 +100,8 @@ router.delete('/concentrator/:concentrator_id', function(req, res){
 
 /*--- Conteca ---*/
 
-
 //Conteca creation
-router.post('/conteca', function(req,res){
+router.post('/conteca', function(req, res){
    dbManager.createConteca(req.body.primary_address, req.body.related_concentrator, function(err, conteca){
       if(!err){
           res.json(conteca);
@@ -120,6 +138,7 @@ router.put('/conteca/:conteca_id', function(req, res){
        }
    });
 });
+
 
 
 //Conteca deletion
