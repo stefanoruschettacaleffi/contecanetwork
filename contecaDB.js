@@ -251,7 +251,7 @@ module.exports.getAllMeasures = getAllMeasures;
 module.exports.getConcentratorWithId = getConcentratorWithId;
 module.exports.getContecaWithId = getContecaWithId;
 module.exports.getMeasureWithId = getMeasureWithId;
-module.exports.getMeassuresRelatedToConteca = getAllMeasuresRelatedToConteca;
+module.exports.getAllMeasuresRelatedToConteca = getAllMeasuresRelatedToConteca;
 
 module.exports.updateConcentratorWithId = updateConcentratorWithId;
 module.exports.updateContecaWithId = updateContecaWithId;
