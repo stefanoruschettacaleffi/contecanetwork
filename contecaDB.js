@@ -16,7 +16,7 @@ function connectToDB() {
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function() {
         console.log("connection to DB successful");
-        createDummyDB();
+        //createDummyDB();
     });
 }
 
@@ -157,6 +157,12 @@ function getContecaWithId(conteca_id, callback){
     });
 }
 
+function getAllMeasuresRelatedToConteca(conteca, callback) {
+    Measure.find({related_conteca: ObjectId(conteca)}, function(err, result){
+        callback(err, result);
+    })
+}
+
 function getAllMeasures(callback){
     Measure.find( function(err, result) {
         callback(err, result);
@@ -213,7 +219,7 @@ function deleteMeasureWithId(measure_id, callback) {
 
 
 /*--- Dummy ---*/
-
+/*
 function createDummyDB() {
     //Find concentrators
     Concentrator.findOne(function(err, result){
@@ -229,7 +235,7 @@ function createDummyDB() {
         }
     });
 }
-
+*/
 
 //Export functions
 
@@ -245,6 +251,7 @@ module.exports.getAllMeasures = getAllMeasures;
 module.exports.getConcentratorWithId = getConcentratorWithId;
 module.exports.getContecaWithId = getContecaWithId;
 module.exports.getMeasureWithId = getMeasureWithId;
+module.exports.getMeassuresRelatedToConteca = getAllMeasuresRelatedToConteca;
 
 module.exports.updateConcentratorWithId = updateConcentratorWithId;
 module.exports.updateContecaWithId = updateContecaWithId;
