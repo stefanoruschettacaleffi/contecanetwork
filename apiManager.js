@@ -143,7 +143,7 @@ router.delete('/conteca/:conteca_id', function(req, res){
 
 
 //Conteca measures
-router.get(' conteca/:conteca_id/measure', function(req, res){
+router.get('/conteca/:conteca_id/measure', function(req, res){
     dbManager.getAllMeasuresRelatedToConteca(req.params.conteca_id, function(err, result){
        if(!err){
            res.json(result);

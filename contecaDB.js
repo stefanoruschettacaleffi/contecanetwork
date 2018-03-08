@@ -140,7 +140,7 @@ function getConcentratorWithId(concentrator_id, callback){
 }
 
 function getAllContecasRelatedToConcentrator(concentrator, callback) {
-     Conteca.find({related_concentrator: ObjectId(concentrator)},  function(err, result){
+     Conteca.find({related_concentrator: ObjectId(concentrator)}, function(err, result){
          callback(err, result);
      });
 }
