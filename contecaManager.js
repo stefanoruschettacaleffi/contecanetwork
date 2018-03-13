@@ -25,7 +25,6 @@ module.exports = {
         });
 
         //DB connection
-
         contecaDB.connectToDB();
     }
 };
@@ -51,25 +50,19 @@ function handleConnection(conn){
 
         if (mbus.MBusStatus === mbus.MBusStatusEnum.waitingForAck && data === "e5") {
 
-            //console.log("Ack received for: " + mbus.currentPrimaryAddress);
-            //console.log("Sending data request to: " + mbus.currentPrimaryAddress);
-
             mbus.MBusStatus = mbus.MBusStatusEnum.waitingForData;
-
             conn.write(mbus.dataForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
         }
         else if (mbus.MBusStatus === mbus.MBusStatusEnum.waitingForData) {
-            //console.log("Data received for: " + mbus.currentPrimaryAddress);
-            //console.log("Data: " + data);
 
             if (mbus.checkResponseValidity(data)) {
-                saveMeasureOnDBFromData(data);
+                saveMeasureOnDBFromData(data, (contecas[currentContecaIndex]._id));
             }
             else {
                 console.log("invalid response");
             }
 
-            if( currentContecaIndex === contecas.length - 1){
+            if( currentContecaIndex === contecas.length - 1) {
                 conn.destroy();
             }
             else {
@@ -94,30 +87,20 @@ function handleConnection(conn){
     contecaDB.getAllContecasRelatedToConcentrator("5a94130c9fb42f74dc8272a7", function(err, results) {
         if (!err) {
             contecas = results;
-            var final = contecas;
-            for(var i = 0; i < 50; i++) {
-                final = final.concat(contecas);
-            }
-            contecas = final;
             startInterrogationOf(contecas[currentContecaIndex]);
         }
     });
 
     function startInterrogationOf(conteca) {
-
-        mbus.currentPrimaryAddress = conteca.primary_address;
-
-        //console.log(conteca);
++        mbus.currentPrimaryAddress = conteca.primary_address;
         mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
 
         conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
     }
 }
 
-function saveMeasureOnDBFromData(data) {
+function saveMeasureOnDBFromData(data, conteca_id) {
     var frame = new MBusFrame(data);
-
-    //console.log(frame);
 
     var energy = (frame.dataBlocks[2]).data;
     var volume = (frame.dataBlocks[3]).data;
@@ -132,5 +115,5 @@ function saveMeasureOnDBFromData(data) {
     var energy_1 = (frame.dataBlocks[16]).data;
 
     contecaDB.createMeasure(energy, volume, power, volume_flow, flow_temperature, return_temperature,
-                            volume_1, volume_2, volume_3, volume_4, energy_1);
+                            volume_1, volume_2, volume_3, volume_4, energy_1, conteca_id);
 }

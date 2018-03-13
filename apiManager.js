@@ -130,8 +130,6 @@ router.put('/conteca/:conteca_id', function(req, res){
    });
 });
 
-
-
 //Conteca deletion
 router.delete('/conteca/:conteca_id', function(req, res){
     dbManager.deleteContecaWithId(req.params.conteca_id, function(err, result){
@@ -140,7 +138,6 @@ router.delete('/conteca/:conteca_id', function(req, res){
         }
     });
 });
-
 
 //Conteca measures
 router.get('/conteca/:conteca_id/measure', function(req, res){
