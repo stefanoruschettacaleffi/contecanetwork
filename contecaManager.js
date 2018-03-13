@@ -46,7 +46,6 @@ function handleConnection(conn){
     var currentContecaIndex = 0;
 
     function onConnData(data) {
-        conn.destroy();
 
         if (mbus.MBusStatus === mbus.MBusStatusEnum.waitingForAck && data === "e5") {
 
