@@ -100,7 +100,7 @@ function handleConnection(conn){
 
 function saveMeasureOnDBFromData(data, conteca_id) {
     var frame = new MBusFrame(data);
-
+console.log(frame);
     var energy = (frame.dataBlocks[2]).data;
     var volume = (frame.dataBlocks[3]).data;
     var power = (frame.dataBlocks[4]).data;
