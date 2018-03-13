@@ -92,7 +92,7 @@ function handleConnection(conn){
     });
 
     function startInterrogationOf(conteca) {
-+        mbus.currentPrimaryAddress = conteca.primary_address;
+        mbus.currentPrimaryAddress = conteca.primary_address;
         mbus.MBusStatus = mbus.MBusStatusEnum.waitingForAck;
 
         conn.write( mbus.ackForPrimaryAddress(mbus.currentPrimaryAddress), "hex");
