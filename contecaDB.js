@@ -158,7 +158,7 @@ function getContecaWithId(conteca_id, callback){
 }
 
 function getAllMeasuresRelatedToConteca(conteca, callback) {
-    Measure.find().limit(20).exec( function(err, result){
+    Measure.find({related_id: conteca}, function(err, result){
         callback(err, result);
     });
 }
